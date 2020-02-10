@@ -1,0 +1,6 @@
+# Source and destination directories
+source: ./src
+destination: ./build
+
+# Development options for jekyll serve
+livereload: true
