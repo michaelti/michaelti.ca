@@ -1,0 +1,24 @@
+<div class="container">
+    <nav>
+        <!-- Home link / Logo -->
+        <a href="/">
+            <img src="/assets/images/logo-michaelti.svg" alt="">
+        </a>
+        
+        <!-- Main internal pages -->
+        {% for item in site.data.navigation.primary %}
+            <a href="{{ item.link }}">
+                {{ item.title }}
+            </a>
+        {% endfor %}
+
+        <a>//</a>
+
+        <!-- Secondary external links / icons -->
+        {% for item in site.data.navigation.secondary %}
+            <a href="{{ item.link }}" title="{{ item.title }}" target="_blank" rel="noreferrer">
+                {{ item.content }}
+            </a>
+        {% endfor %}
+    </nav>
+</div>

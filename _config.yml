@@ -4,3 +4,6 @@ destination: ./build
 
 # Development options for jekyll serve
 livereload: true
+
+# Custom options
+title: michaelti.ca

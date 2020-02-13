@@ -1,0 +1,13 @@
+primary:
+    -   title: Projects
+        link: /projects/
+    -   title: Sandbox
+        link: /sandbox/
+
+secondary:
+    -   title: LinkedIn
+        link: https://linkedin.com/in/mtdismatsek
+        content: <i class="fab fa-linkedin-in"></i>
+    -   title: Email
+        link: mailto:m@michaelti.ca
+        content: <i class="far fa-envelope"></i>
