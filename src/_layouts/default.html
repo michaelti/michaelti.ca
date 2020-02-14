@@ -9,16 +9,8 @@
     <script src="https://kit.fontawesome.com/9db44483f1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        {% include navigation.html %}
-    </header>
-
-    <main>
-        {{ content }}
-    </main>
-
-    <footer>
-        <div class="container">footer</div>
-    </footer>
+    {% include header.html %}
+    {{ content }}
+    {% include footer.html %}
 </body>
 </html>

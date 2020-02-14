@@ -11,6 +11,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Muli', sans-serif;
     font-weight: 700;
+    margin-top: $layoutPadding * 2;
+    margin-bottom: $layoutPadding * 2;
 }
 
 p {
@@ -22,57 +24,10 @@ a {
 }
 
 
-/* Layout */
-
-body {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        "header"
-        "main"
-        "footer";
-}
-
-header {
-    grid-area: header;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-main {
-    grid-area: main;
-}
-
-footer {
-    grid-area: footer;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.container {
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.container-wide {
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-
 /* Home title */
 
 h1.home-title {
     font-size: 2.5em;
-    margin-bottom: 0;
 }
 
 h1.home-title::after {
@@ -98,24 +53,88 @@ h1.home-title::after {
 /* Navigation temp */
 
 nav {
-    padding-bottom: 30px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding-top: $layoutPadding * 2;
+    padding-bottom: $layoutPadding * 2;
+    display: flex;
+    align-items: flex-end;
+    > *:not(:last-child) {
+        margin-right: $layoutPadding + 5px;
+    }
 }
 
-nav a {
-    margin-right: 10px;
+nav > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    > li:not(:last-child) {
+        margin-right: $layoutPadding;
+    }
+}
+
+nav > ul > li > a {
+    position: relative;
+    display: inline-block;
     text-decoration: none;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        right: 0;
+        display: block;
+        height: 2px;
+        width: 0%;
+        background-color: map-get($colors, 'link');
+        border-radius: 2px;
+        transition: width .15s ease;
+    }
+
+    &:hover, &:active, &:focus, &.active {
+        &::after {
+            left: 0;
+            width: 100%;
+        }
+    }
 }
 
-nav a img {
+nav .nav-primary {
+    flex-grow: 1;
+}
+
+nav .nav-brand img {
+    display: block;
     height: 1.5em;
     width: 1.5em;
-    vertical-align: bottom;
     border-radius: 2px;
 }
 
 /* Footer temp */
 
 footer {
-    background-color: #ebebeb;
+    background-color: #efefef;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    padding-top: $layoutPadding * 2;
+    padding-bottom: $layoutPadding * 2;
+
+}
+
+
+
+
+/* Portfolio Grid temp */
+.portfolio-grid {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    grid-gap: 15px;
+    margin-top: 45px;
+}
+
+.portfolio-grid > div {
+    background-color: #fff;
+    height: 250px;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }

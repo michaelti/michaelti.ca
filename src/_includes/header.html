@@ -1,0 +1,34 @@
+<header>
+    <div class="container">
+        <nav>
+
+            <!-- Home link / Logo -->
+            <a href="/" class="nav-brand">
+                <img src="/assets/images/logo-michaelti.svg" alt="michaelti.ca">
+            </a>
+
+            <!-- Main internal pages -->
+            <ul class="nav-primary">
+                {% for item in site.data.navigation.primary %}
+                    <li>
+                        <a href="{{ item.link }}" {% if item.link == page.url %} class="active" {% endif %}>
+                            {{ item.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <!-- Secondary external links / icons -->
+            <ul class="nav-secondary">
+                {% for item in site.data.navigation.secondary %}
+                    <li>
+                        <a href="{{ item.link }}" title="{{ item.title }}" target="_blank" rel="noreferrer">
+                            {{ item.content }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        </nav>
+    </div>
+</header>
