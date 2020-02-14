@@ -30,12 +30,17 @@ h1.home-title {
     font-size: 2.5em;
 }
 
-h1.home-title::after {
+h1.home-title > span:first-child {
+    padding-right: 0.55em;
+}
+
+h1.home-title > span:first-child::after {
     content: '';
     display: inline-block;
     margin-left: 0.25em;
     width: 0.3em;
     height: 0.7em;
+    margin-right: -0.55em;
     background-color: map-get($colors, 'text');
     animation-name: cursorBlink;
     animation-duration: 2s;
@@ -124,6 +129,7 @@ footer {
 
 
 /* Portfolio Grid temp */
+
 .portfolio-grid {
     display: grid;
     grid-auto-rows: auto;
