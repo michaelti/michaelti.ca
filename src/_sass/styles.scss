@@ -139,8 +139,13 @@ footer {
 }
 
 .portfolio-grid > div {
-    background-color: #fff;
-    height: 250px;
     border-radius: 2px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.portfolio-grid > div > img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
