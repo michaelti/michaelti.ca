@@ -20,3 +20,7 @@ permalink: /portfolio/
         <div><img src="https://placehold.it/290x290" alt=""></div>
     </div>
 </div>
+
+{% for item in site.portfolio %}
+    <div>{{ item.url }}</div>
+{% endfor %}

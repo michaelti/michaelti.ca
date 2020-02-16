@@ -7,3 +7,10 @@ livereload: true
 
 # Custom options
 title: michaelti.ca
+
+# Custom collections
+collections_dir: collections
+collections:
+    portfolio:
+        output: true
+        permalink: /:collection/:name/
