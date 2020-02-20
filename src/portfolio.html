@@ -10,17 +10,13 @@ permalink: /portfolio/
 
 <div class="container-wide">
     <div class="portfolio-grid">
-        <div><img src="https://placehold.it/290x290" alt=""></div>
-        <div><img src="https://placehold.it/290x290" alt=""></div>
-        <div><img src="https://placehold.it/290x290" alt=""></div>
-        <div><img src="https://placehold.it/290x290" alt=""></div>
-        <div><img src="https://placehold.it/290x290" alt=""></div>
-        <div><img src="https://placehold.it/290x290" alt=""></div>
-        <div><img src="https://placehold.it/290x290" alt=""></div>
-        <div><img src="https://placehold.it/290x290" alt=""></div>
+        {% for item in site.portfolio %}
+            <div>
+                <a href="{{ item.url }}">
+                    <img src="{{ item.thumbnail }}" alt="{{ item.title }}">
+                    <span>{{ item.title }}</span>
+                </a>
+            </div>
+        {% endfor %}
     </div>
 </div>
-
-{% for item in site.portfolio %}
-    <div>{{ item.url }}</div>
-{% endfor %}

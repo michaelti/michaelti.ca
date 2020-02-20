@@ -8,6 +8,9 @@ secondary:
     -   title: LinkedIn
         link: https://linkedin.com/in/mtdismatsek
         content: <i class="fab fa-linkedin-in"></i>
+    -   title: GitHub
+        link: https://github.com/michaelti
+        content: <i class="fab fa-github"></i>
     -   title: Email
         link: mailto:m@michaelti.ca
         content: <i class="far fa-envelope"></i>

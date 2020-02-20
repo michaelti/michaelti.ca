@@ -14,3 +14,13 @@ collections:
     portfolio:
         output: true
         permalink: /:collection/:name/
+        sort_by: order
+
+# Front matter defailts
+defaults:
+    -
+        scope:
+            path: ""
+            type: "portfolio"
+        values:
+            layout: "page"

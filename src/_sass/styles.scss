@@ -144,8 +144,18 @@ footer {
     overflow: hidden;
 }
 
-.portfolio-grid > div > img {
+.portfolio-grid > div > a {
+    display: block;
+    text-decoration: none;
+}
+
+.portfolio-grid > div > a > img {
     display: block;
     width: 100%;
     height: auto;
+}
+
+.portfolio-grid > div > a > span {
+    display: block;
+    padding: 10px 15px;
 }
