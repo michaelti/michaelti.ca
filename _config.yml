@@ -13,8 +13,10 @@ collections_dir: collections
 collections:
     portfolio:
         output: true
-        permalink: /:collection/:name/
+        permalink: /portfolio/:name/
         sort_by: order
+    posts:
+        permalink: /sandbox/:year/:month/:day/:title/
 
 # Front matter defailts
 defaults:
@@ -22,5 +24,11 @@ defaults:
         scope:
             path: ""
             type: "portfolio"
+        values:
+            layout: "page"
+    -
+        scope:
+            path: ""
+            type: "posts"
         values:
             layout: "page"
