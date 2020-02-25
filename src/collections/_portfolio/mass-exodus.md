@@ -1,6 +1,6 @@
 ---
 title: Mass Exodus 2017, 2018
-thumbnail: https://placehold.it/290x290
+thumbnail: /assets/images/portfolio/mass-exodus.png
 order: 5
 ---
 
