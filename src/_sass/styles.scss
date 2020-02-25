@@ -165,8 +165,13 @@ footer {
 
 /* Post temp */
 
-.post img {
+.post img,
+.post video {
     display: block;
     width: 100%;
     height: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
