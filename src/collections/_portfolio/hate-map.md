@@ -1,31 +1,18 @@
 ---
 title: Hate Map
-thumbnail: /assets/images/portfolio/hate-map.png
+thumbnail: /assets/images/portfolio/hate-map-2.png
 order: 1
 ---
 
-## Summary
+Commissioned by Ryerson University's Centre for Free Expression, the CFE Hate Map is an interactive tracker of hate and extremist groups across Canada, built using D3.js and JSON data from a Drupal 7 content management backend.
 
-Hate Map - Centre for Free Expression
+This project is currently in progress. A live demo and full case study will be added here when it's ready to go later in 2020. In the meantime, you may also see more about the [Centre for Free Epression's main website in my portfolio](/portfolio/centre-for-free-expression/).
 
-## Background, Role, Duration
 
-## Goals
-
-## Results
-
-## Timeline
-
-## Who what when where how why?
-
-## Custom headings per project
-
-## What I've learned
-
-## Tags / Categories / Skills / Tech
-
-## Demo / photos / video
-
-<video height="402" controls autoplay muted loop>
-    <source src="/assets/videos/hate-map-demo.mp4" type="video/mp4">
+<video height="402" autoplay muted loop>
+    <source src="/assets/videos/hate-map-demo-2.mp4" type="video/mp4">
 </video>
+
+## Screenshots
+
+![alt text](/assets/images/portfolio/hate-map-scr.png)
