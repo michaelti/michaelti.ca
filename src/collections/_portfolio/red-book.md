@@ -5,3 +5,8 @@ order: 2
 ---
 
 At Hamilton Public Library, I ...
+
+<br>
+<video autoplay muted loop>
+    <source src="/assets/videos/red-book-demo.mp4" type="video/mp4">
+</video>

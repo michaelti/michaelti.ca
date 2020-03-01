@@ -8,7 +8,7 @@ The FCAD Project Hub was an ongoing project at Ryerson University. The purpose o
 
 Over several months, I worked with a lead developer to create this project from scratch. I was responsible for front-end design and development using Drupal 8, back-end support, and weekly progress check-ins until we presented the site to intended clients at the annual Ryerson IT Conference.
 
-<video height="402" autoplay muted loop>
+<video autoplay muted loop>
     <source src="/assets/videos/3d-project-hub-demo.mp4" type="video/mp4">
 </video>
 
