@@ -10,3 +10,5 @@ At Hamilton Public Library, I ...
 <video autoplay muted loop>
     <source src="/assets/videos/red-book-demo.mp4" type="video/mp4">
 </video>
+
+> I love working on the details of user experience
