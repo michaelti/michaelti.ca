@@ -16,4 +16,4 @@ This project is currently in progress. A live demo and full case study will be a
 ## Screenshots
 
 ![alt text](/assets/images/portfolio/hate-map-scr.png)
-- Take a bigger screenshot and unhide the Filters tab for it
+![alt text](/assets/images/portfolio/hate-map-scr-2.png)
