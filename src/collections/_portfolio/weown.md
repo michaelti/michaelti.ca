@@ -21,6 +21,12 @@ weOwn was a member of the Velocity Garage startup accelerator at the University 
 <video autoplay muted loop>
     <source src="/assets/videos/weown-demo-2.mp4" type="video/mp4">
 </video>
+<video autoplay muted loop>
+    <source src="/assets/videos/weown-demo-3.mp4" type="video/mp4">
+</video>
+<video autoplay muted loop>
+    <source src="/assets/videos/weown-demo-4.mp4" type="video/mp4">
+</video>
 
 ## Screenshots
 
