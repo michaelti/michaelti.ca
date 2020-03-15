@@ -8,9 +8,8 @@ Commissioned by Ryerson University's Centre for Free Expression, the CFE Hate Ma
 
 This project is currently in progress. A live demo and full case study will be added here when it's ready to go later in 2020. In the meantime, you may also see more about the [Centre for Free Epression's main website in my portfolio](/portfolio/centre-for-free-expression/).
 
-
 <video autoplay muted loop>
-    <source src="/assets/videos/hate-map-demo-2.mp4" type="video/mp4">
+    <source src="/assets/videos/hate-map-demo.mp4" type="video/mp4">
 </video>
 
 ## Screenshots

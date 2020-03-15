@@ -15,6 +15,9 @@ As Lead Front-end Designer and Developer, I learned a ton about React and modern
 <br><br>
 weOwn was a member of the Velocity Garage startup accelerator at the University of Waterloo, and has recently been acquired. Also featured in the Toronto Star / media.
 
+<video autoplay muted loop>
+    <source src="/assets/videos/weown-demo.mp4" type="video/mp4">
+</video>
 
 ## Screenshots
 
