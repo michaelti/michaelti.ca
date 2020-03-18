@@ -16,7 +16,7 @@ When I joined the team at Hamilton Public Library, we had taken over a legacy sy
 
 Over six months we designed, developed, and launched a revamped Red Book experience – fresh, accessible, and consistent with the library's brand – all while planning the next generation of the platform.
 
-<video autoplay muted loop>
+<video autoplay muted loop playsinline>
     <source src="/assets/videos/red-book-demo.mp4" type="video/mp4">
 </video>
 
