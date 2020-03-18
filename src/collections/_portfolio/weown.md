@@ -8,33 +8,30 @@ Link: <https://app.weown.ca>
 
 
 
-weOwn is a web platform and startup business which began in 2018 with three co-founders, in order to address the problem of real estate affordability by making co-ownership an easier alternative for prospective homebuyers. The web app connects and guides users along their co-ownership journey, starting by finding a partner with similar goals.
+weOwn is a startup web platform aiming to address the problem of real estate affordability by making co-ownership an easier alternative for potential homebuyers. The web app connects and guides users along their co-ownership journey, starting by finding partners with similar goals.
 
-As Lead Front-end Designer and Developer, I learned a ton about React and modern JavaScript workflows in a fast-paced setting. With sharp attention to detail, I worked to create the user interface for our Ruby on Rails backend API.
+We began this project with three co-founders in 2018. As Lead Front-end Developer using React, I learned a ton about modern JavaScript workflows and design in a fast-paced setting. With sharp attention to detail, I worked with a backend engineer to create the user interface for our Ruby on Rails REST API.
 
-<br><br>
-weOwn was a member of the Velocity Garage startup accelerator at the University of Waterloo, and has recently been acquired. Also featured in the Toronto Star / media.
+weOwn participated in the Velocity startup accelerator at University of Waterloo, and has been featured in media such as [The Toronto Star](https://www.thestar.com/news/gta/2019/02/28/looking-for-someone-to-share-a-mortgage-theres-an-app-for-that.html). The business has since been purchased, and I have continued with minor freelance updates to the web app. More information can be found at the [weOwn website](https://weown.ca/).
 
-<video autoplay muted loop>
-    <source src="/assets/videos/weown-demo.mp4" type="video/mp4">
-</video>
-<video autoplay muted loop>
-    <source src="/assets/videos/weown-demo-2.mp4" type="video/mp4">
-</video>
-<video autoplay muted loop>
+<video autoplay muted loop playsinline>
     <source src="/assets/videos/weown-demo-3.mp4" type="video/mp4">
-</video>
-<video autoplay muted loop>
-    <source src="/assets/videos/weown-demo-4.mp4" type="video/mp4">
 </video>
 
 ## Screenshots
 
-![alt text](/assets/images/portfolio/weown-scr-1.png)
-![alt text](/assets/images/portfolio/weown-scr-2.png)
+![alt text](/assets/images/portfolio/weown-scr-3.png)
 
+<div style="
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+">
 
+    <img src="/assets/images/portfolio/weown-scr-11.png" alt="" style="margin: 0;">
+    <img src="/assets/images/portfolio/weown-scr-8.png" alt="" style="margin: 0;">
+    <img src="/assets/images/portfolio/weown-scr-7.png" alt="" style="margin: 0;">
+    <img src="/assets/images/portfolio/weown-scr-10.png" alt="" style="margin: 0;">
 
-
-<br><br><br><br><br>
-
+</div>
