@@ -133,43 +133,6 @@ footer {
 
 .portfolio-grid {
     display: grid;
-    grid-auto-rows: auto;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    grid-gap: $layoutPadding * 2;
-    margin-top: 45px;
-}
-
-.portfolio-grid > div {
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-}
-
-.portfolio-grid > div > a {
-    display: block;
-    text-decoration: none;
-}
-
-.portfolio-grid > div > a > img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.portfolio-grid > div > a > span {
-    display: block;
-    padding: 10px 15px;
-}
-
-
-
-
-
-
-
-
-.portfolio-grid-2 {
-    display: grid;
     grid-gap: $layoutPadding;
     grid-auto-rows: 1fr;
     
