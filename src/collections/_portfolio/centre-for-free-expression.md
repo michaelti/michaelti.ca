@@ -1,7 +1,8 @@
 ---
 title: Centre for Free Expression
-thumbnail: /assets/images/portfolio/centre-for-free-expression.png
-order: 10
+teaser: Building a hub for education, research and advocacy
+thumbnail: /assets/images/portfolio/thumbnails/centre-for-free-expression.png
+order: 5
 ---
 
 Link: <https://cfe.ryerson.ca>

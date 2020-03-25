@@ -28,6 +28,7 @@ a {
 
 h1.home-title {
     font-size: 2.5em;
+    margin-bottom: 0;
 }
 
 h1.home-title > span:first-child {
@@ -133,7 +134,7 @@ footer {
 .portfolio-grid {
     display: grid;
     grid-auto-rows: auto;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     grid-gap: $layoutPadding * 2;
     margin-top: 45px;
 }
@@ -159,6 +160,67 @@ footer {
     display: block;
     padding: 10px 15px;
 }
+
+
+
+
+
+
+
+
+.portfolio-grid-2 {
+    display: grid;
+    grid-gap: $layoutPadding;
+    grid-auto-rows: 1fr;
+    
+    a {
+        display: flex;
+        align-items: center;
+
+        text-decoration: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+        background-color: map-get($colors, 'background-card');
+        overflow: hidden;
+
+        .portfolio-item-thumbnail {
+            flex: 0 0 25%;
+            padding: 15px;
+            max-width: 100px;
+            
+            img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        .portfolio-item-body {
+            flex: 1 1 auto;
+            padding: $layoutPadding;
+            padding-right: 0;
+            
+            h2 {
+                margin-top: 0;
+                margin-bottom: 0;
+                font-size: 1.25em;
+                @media (max-width:400px) {
+                    font-size: 1em;
+                }
+            }
+    
+            p {
+                margin-top: 0.25em;
+                margin-bottom: 0;
+                line-height: 1.25em;
+                color: map-get($colors, 'text');
+            }
+        }
+    }
+}
+
+
+
 
 
 

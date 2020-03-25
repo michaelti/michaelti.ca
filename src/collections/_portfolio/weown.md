@@ -1,6 +1,7 @@
 ---
 title: weOwn
-thumbnail: /assets/images/portfolio/weown-2.png
+teaser: Connecting people for better housing
+thumbnail: /assets/images/portfolio/thumbnails/weown.png
 order: 3
 ---
 
