@@ -1,6 +1,6 @@
 ---
 title: Hate Map
-teaser: Tracking extremist groups across Canada
+teaser: Tracking extremist ideologies across Canada
 thumbnail: /assets/images/portfolio/thumbnails/hate-map.png
 order: 1
 ---
