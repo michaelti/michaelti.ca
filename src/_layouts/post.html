@@ -1,13 +1,16 @@
 ---
 layout: page
 ---
-<div class="container post">
+
+<div class="post-content">
     {{ content }}
 </div>
 
+{% include post-navigation.html %}
+
 <script>
     // Temporary here
-    mediumZoom('.post img', {
+    mediumZoom('.post-content img', {
         margin: 15,
         background: 'rgba(255, 255, 255, 0.75)',
         scrollOffset: 0

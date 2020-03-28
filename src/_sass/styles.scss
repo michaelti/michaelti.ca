@@ -154,7 +154,6 @@ footer {
         border-radius: 2px;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
         background-color: map-get($colors, 'background-card');
-        overflow: hidden;
 
         .portfolio-item-thumbnail {
             flex: 0 0 25%;
@@ -211,8 +210,8 @@ footer {
 
 /* Post temp */
 
-.post img,
-.post video {
+.post-content img,
+.post-content video {
     display: block;
     width: 100%;
     height: auto;
@@ -220,4 +219,54 @@ footer {
     margin-bottom: 2em;
     border-radius: 2px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.post-navigation {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: $layoutPadding*4;
+    padding-top: $layoutPadding*2;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+
+    a {
+        display: flex;
+        align-items: center;
+
+        text-decoration: none;
+
+        .post-navigation-thumbnail {
+            position: relative;
+            width: 60px;
+
+            &::before {
+                content: '';
+                display: block;
+                padding-bottom: 100%;
+            }
+
+            img {
+                position: absolute;
+                display: block;
+                max-width: 100%;
+                max-height: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 15px;
+            }
+        }
+
+        &.post-navigation-next {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        &.post-navigation-prev {
+            margin-right: $layoutPadding * 2;
+        }
+
+        &:hover, &:active, &:focus {
+            text-decoration: underline;
+        }
+    }
 }

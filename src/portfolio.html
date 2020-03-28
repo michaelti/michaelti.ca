@@ -4,19 +4,16 @@ title: Portfolio
 permalink: /portfolio/
 ---
 
-
-<div class="container">
-    <div class="portfolio-grid">
-        {% for item in site.portfolio %}
-            <a href="{{ item.url }}">
-                <div class="portfolio-item-body">
-                    <h2>{{ item.title }}</h2>
-                    <p>{{ item.teaser }}</p>
-                </div>
-                <div class="portfolio-item-thumbnail">
-                    <img src="{{ item.thumbnail }}" alt="">
-                </div>
-            </a>
-        {% endfor %}
-    </div>
+<div class="portfolio-grid">
+    {% for item in site.portfolio %}
+        <a href="{{ item.url }}">
+            <div class="portfolio-item-body">
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.teaser }}</p>
+            </div>
+            <div class="portfolio-item-thumbnail">
+                <img src="{{ item.thumbnail }}" alt="">
+            </div>
+        </a>
+    {% endfor %}
 </div>
