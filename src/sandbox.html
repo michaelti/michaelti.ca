@@ -4,14 +4,10 @@ title: Sandbox
 permalink: /sandbox/
 ---
 
-<div class="container">
-
-    {% for item in site.posts %}
-        <h2>
-            <a href="{{ item.url }}">
-                {{ item.title }}
-            </a>
-        </h2>
-    {% endfor %}
-
-</div>
+{% for item in site.posts %}
+    <h2>
+        <a href="{{ item.url }}">
+            {{ item.title }}
+        </a>
+    </h2>
+{% endfor %}
