@@ -12,7 +12,9 @@ permalink: /portfolio/
                 <p>{{ item.teaser }}</p>
             </div>
             <div class="portfolio-item-thumbnail">
-                <img src="{{ item.thumbnail }}" alt="">
+                <div class="responsive-ratio responsive-ratio-1by1">
+                    <img src="{{ item.thumbnail }}" alt="">
+                </div>
             </div>
         </a>
     {% endfor %}
