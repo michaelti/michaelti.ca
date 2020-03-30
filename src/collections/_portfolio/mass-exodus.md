@@ -15,5 +15,5 @@ I led development of the 2017 and 2018 sites, collaborating heavily to bring the
 
 ## Screenshots
 
-![alt text](/assets/images/portfolio/massexodus-1.jpg)
-![alt text](/assets/images/portfolio/massexodus-2.jpg)
+![alt text](/assets/images/portfolio/mass-exodus-1.jpg)
+![alt text](/assets/images/portfolio/mass-exodus-2.jpg)

@@ -21,7 +21,7 @@ weOwn participated in the Velocity startup accelerator at University of Waterloo
 
 ## Screenshots
 
-![alt text](/assets/images/portfolio/weown-scr-3.png)
+![alt text](/assets/images/portfolio/weown-1.png)
 
 <div style="
     display: grid;
@@ -30,9 +30,9 @@ weOwn participated in the Velocity startup accelerator at University of Waterloo
     grid-gap: 15px;
 ">
 
-    <img src="/assets/images/portfolio/weown-scr-11.png" alt="" style="margin: 0;">
-    <img src="/assets/images/portfolio/weown-scr-8.png" alt="" style="margin: 0;">
-    <img src="/assets/images/portfolio/weown-scr-7.png" alt="" style="margin: 0;">
-    <img src="/assets/images/portfolio/weown-scr-10.png" alt="" style="margin: 0;">
+    <img src="/assets/images/portfolio/weown-2.png" alt="" style="margin: 0;">
+    <img src="/assets/images/portfolio/weown-3.png" alt="" style="margin: 0;">
+    <img src="/assets/images/portfolio/weown-4.png" alt="" style="margin: 0;">
+    <img src="/assets/images/portfolio/weown-5.png" alt="" style="margin: 0;">
 
 </div>

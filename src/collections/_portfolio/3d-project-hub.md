@@ -15,5 +15,5 @@ Over several months, I worked with a lead developer to create this project from 
 
 ## Screenshots
 
-![alt text](/assets/images/portfolio/projecthub-1.jpg)
-![alt text](/assets/images/portfolio/projecthub-2.jpg)
+![alt text](/assets/images/portfolio/3d-project-hub-1.jpg)
+![alt text](/assets/images/portfolio/3d-project-hub-2.jpg)

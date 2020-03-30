@@ -15,5 +15,5 @@ This project is in progress; a live demo and case study will be added when it's 
 
 ## Screenshots
 
-![alt text](/assets/images/portfolio/hate-map-scr.png)
-![alt text](/assets/images/portfolio/hate-map-scr-2.png)
+![alt text](/assets/images/portfolio/hate-map-1.png)
+![alt text](/assets/images/portfolio/hate-map-2.png)

@@ -17,4 +17,4 @@ The website has grown and evolved with the group that runs it since it was first
 
 ## Screenshots
 
-![alt text](/assets/images/portfolio/cfe-scr-1.png)
+![alt text](/assets/images/portfolio/centre-for-free-expression-1.png)

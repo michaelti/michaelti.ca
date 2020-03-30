@@ -23,6 +23,5 @@ Over six months we designed, developed, and launched a revamped Red Book experie
 
 ## Screenshots
 
-![alt text](/assets/images/portfolio/redbook-search.png)
-![alt text](/assets/images/portfolio/redbook-record.png)
-
+![alt text](/assets/images/portfolio/red-book-1.png)
+![alt text](/assets/images/portfolio/red-book-2.png)
