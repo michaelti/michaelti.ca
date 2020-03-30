@@ -16,7 +16,7 @@ We began this project with three co-founders in 2018. As Lead Front-end Develope
 weOwn participated in the Velocity startup accelerator at University of Waterloo, and has been featured in media such as [The Toronto Star](https://www.thestar.com/news/gta/2019/02/28/looking-for-someone-to-share-a-mortgage-theres-an-app-for-that.html). The business has since been purchased, and I have continued with minor freelance updates to the web app. More information can be found at the [weOwn website](https://weown.ca/).
 
 <video autoplay muted loop playsinline>
-    <source src="/assets/videos/weown-demo-3.mp4" type="video/mp4">
+    <source src="/assets/videos/weown-demo.mp4" type="video/mp4">
 </video>
 
 ## Screenshots

@@ -12,7 +12,7 @@ The main website for the Centre for Free Expression is one of the most robust pr
 The website has grown and evolved with the group that runs it since it was first launched, and is now fully featured with several types of content, taxonomies, and ways to discover information. I have continued maintaining and building these new features on a freelance basis.
 
 <video autoplay muted loop playsinline>
-    <source src="/assets/videos/cfe-demo.mp4" type="video/mp4">
+    <source src="/assets/videos/centre-for-free-expression-demo.mp4" type="video/mp4">
 </video>
 
 ## Screenshots
