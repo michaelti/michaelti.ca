@@ -2,7 +2,7 @@
 title: Mass Exodus
 teaser: Dressing up an annual fashion show
 thumbnail: /assets/images/portfolio/thumbnails/mass-exodus.png
-order: 10
+order: 6
 ---
 
 Mass Exodus is the annual student-led fashion show at Ryerson University. Each year, the task is to work with the Mass Exodus team to promote the event in a way that is on-brand, beautiful, purposeful, and time-sensitive.
