@@ -263,3 +263,13 @@ footer {
         }
     }
 }
+
+
+
+/* Medium zoom temp */
+
+.medium-zoom-overlay {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
