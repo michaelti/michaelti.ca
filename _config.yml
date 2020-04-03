@@ -4,3 +4,32 @@ destination: ./build
 
 # Development options for jekyll serve
 livereload: true
+host: 0.0.0.0
+
+# Custom options
+title: michaelti.ca
+
+# Custom collections
+collections_dir: collections
+collections:
+    portfolio:
+        output: true
+        permalink: /portfolio/:name/
+        sort_by: order
+    posts:
+        permalink: /sandbox/:year/:month/:day/:title/
+
+# Front matter defailts
+defaults:
+    -
+        scope:
+            path: ""
+            type: "portfolio"
+        values:
+            layout: "post"
+    -
+        scope:
+            path: ""
+            type: "posts"
+        values:
+            layout: "post"

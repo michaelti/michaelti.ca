@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }} | {{ page.title }}</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <script src="/assets/scripts/medium-zoom.min.js" defer></script>
+    <script src="/assets/scripts/main.js"></script>
+    {% include analytics.html %}
+</head>
+<body>
+    {% include header.html %}
+    {{ content }}
+    {% include footer.html %}
+</body>
+</html>

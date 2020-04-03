@@ -1,0 +1,29 @@
+<div class="post-navigation">
+    {% if page.previous %}
+        <a href="{{page.previous.url}}" class="post-navigation-prev">
+            <span>&larr;</span>
+            {% if page.previous.thumbnail %}       
+                <div class="post-navigation-thumbnail">
+                    <div class="responsive-ratio responsive-ratio-1by1">
+                        <img src="{{ page.previous.thumbnail }}" alt="">
+                    </div>
+                </div>
+            {% endif %}
+            <span>{{ page.previous.title }}</span>
+        </a>
+    {% endif %}
+
+    {% if page.next %}
+        <a href="{{page.next.url}}" class="post-navigation-next">
+            <span>{{ page.next.title }}</span>
+            {% if page.next.thumbnail %}
+                <div class="post-navigation-thumbnail">
+                    <div class="responsive-ratio responsive-ratio-1by1">
+                        <img src="{{ page.next.thumbnail }}" alt="">
+                    </div>
+                </div>
+            {% endif %}
+            <span>&rarr;</span>
+        </a>
+    {% endif %}
+</div>

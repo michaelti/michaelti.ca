@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<main>
+    <div class="container">
+        <header>
+            {% if page.thumbnail %}
+                <img class="page-thumbnail" src="{{ page.thumbnail }}" alt="">
+            {% endif %}
+            <h1>{{ page.title }}</h1>
+        </header>
+        
+        {{ content }}
+    </div>
+</main>

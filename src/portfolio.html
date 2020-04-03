@@ -1,0 +1,21 @@
+---
+layout: page
+title: Portfolio
+permalink: /portfolio/
+---
+
+<div class="portfolio-grid">
+    {% for item in site.portfolio %}
+        <a href="{{ item.url }}">
+            <div class="portfolio-item-body">
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.teaser }}</p>
+            </div>
+            <div class="portfolio-item-thumbnail">
+                <div class="responsive-ratio responsive-ratio-1by1">
+                    <img src="{{ item.thumbnail }}" alt="">
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>
