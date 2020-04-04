@@ -2,8 +2,8 @@ html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
 body {
-    background: map-get($colors, 'background');
-    color: map-get($colors, 'text');
+    background: $color-background;
+    color: $color-text;
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
 }
@@ -20,7 +20,7 @@ p, ol, ul {
 }
 
 a {
-    color: map-get($colors, 'link');
+    color: $color-link;
 }
 
 
@@ -42,7 +42,7 @@ h1.home-title > span:first-child::after {
     width: 0.3em;
     height: 0.7em;
     margin-right: -0.55em;
-    background-color: map-get($colors, 'text');
+    background-color: $color-text;
     animation-name: cursorBlink;
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -91,7 +91,7 @@ nav > ul > li > a {
         bottom: -1px;
         height: 2px;
         width: 100%;
-        background-color: map-get($colors, 'link');
+        background-color: $color-link;
         border-radius: 2px;
         transform-origin: 100% 0;
         transform: scaleX(0);
@@ -156,7 +156,7 @@ footer {
             0 4px 16px -4px rgba(0, 0, 0, 0.10),
             0 1px 4px -1px rgba(0, 0, 0, 0.05);
 
-        background-color: map-get($colors, 'background-card');
+        background-color: $color-background-card;
         position: relative;
 
         .portfolio-item-body {
@@ -177,7 +177,7 @@ footer {
                 margin-top: 0.25em;
                 margin-bottom: 0;
                 line-height: 1.25em;
-                color: map-get($colors, 'text');
+                color: $color-text;
             }
         }
 
@@ -194,7 +194,7 @@ footer {
             bottom: 0;
             height: 2px;
             width: 100%;
-            background-color: map-get($colors, 'link');
+            background-color: $color-link;
             border-radius: 2px;
             transform-origin: 100% 0;
             transform: scaleX(0);
