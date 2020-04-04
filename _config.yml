@@ -33,3 +33,7 @@ defaults:
             type: "posts"
         values:
             layout: "post"
+
+# Sass options
+sass:
+    style: compressed
