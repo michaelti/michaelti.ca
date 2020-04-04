@@ -5,7 +5,7 @@ thumbnail: /assets/images/portfolio/thumbnails/mass-exodus.png
 order: 6
 ---
 
-Mass Exodus is the annual student-led fashion show at Ryerson University. Each year, the objective is to work with the Mass Exodus team to promote the event in a way that is on-brand, beautiful, purposeful, and time-sensitive.
+Mass Exodus is the world's largest student-led fashion show held annually at Ryerson University. Each year, the objective is to work with the Mass Exodus team to promote the event in a way that is on-brand, beautiful, purposeful, and time-sensitive.
 
 I led development of the 2017 and 2018 promotional sites, collaborating heavily to bring the students' creative vision to life. Thanks to super smooth teamwork and precise attention to detail, these were the show's most exciting sites to date!
 
