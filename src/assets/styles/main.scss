@@ -4,9 +4,11 @@
 // Vendor-provided dependencies
 @import 'vendor/normalize';
 
-// Authored partials
+// Custom fonts
 @import 'font-face';
-@import 'colors';
+
+//Authored partials
+@import 'global-variables';
 @import 'layout';
 @import 'icons';
 @import 'utilities';
