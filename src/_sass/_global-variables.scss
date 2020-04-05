@@ -1,0 +1,26 @@
+// Layout
+$layout-spacing: 15px;
+$container-width: 640px;
+$breakpoint-large: 480px;
+
+// Colours
+$color-background: #f7f7f7;
+$color-background-card: #fdfdfd;
+$color-background-well: #f0f0f0;
+$color-text: #272727;
+$color-link: #0077ba;
+$color-border: rgba(0, 0, 0, 0.15);
+
+// Typography
+$font-family-body: 'Roboto Slab', serif;
+$font-family-heading: 'Muli', sans-serif;
+$font-weight-body: 400;
+$font-weight-heading: 700;
+
+// Shadows
+$box-shadow-card:
+    0 4px 16px -4px rgba(0, 0, 0, 0.10),
+    0 1px 4px -1px rgba(0, 0, 0, 0.05);
+
+// Border radius
+$border-radius-card: 2px;

@@ -1,0 +1,30 @@
+// Navigation at the end of posts (next and previous links)
+nav.post-navigation {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: $layout-spacing * 4;
+    padding-top: $layout-spacing * 2;
+    border-top: 1px solid $color-border;
+
+    > a {
+        display: flex;
+        align-items: center;
+        position: relative;
+        text-decoration: none;
+        @include animation-sliding-line;
+
+        > .post-navigation-thumbnail {
+            width: 4em;
+            padding: 10px;
+        }
+    }
+
+    > a.post-navigation-prev {
+        margin-right: $layout-spacing * 2;
+    }
+
+    > a.post-navigation-next {
+        margin-left: auto;
+        text-align: right;
+    }
+}

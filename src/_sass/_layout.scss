@@ -1,0 +1,25 @@
+// Reset box-sizing
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+// Global website layout
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: $color-background;
+
+    > main {
+        flex-grow: 1;
+        padding-bottom: $layout-spacing * 8;
+    }
+}
+
+// Container classes
+.container {
+    max-width: $container-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $layout-spacing;
+    padding-right: $layout-spacing;
+}

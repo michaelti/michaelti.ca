@@ -1,0 +1,41 @@
+// Global header navigation
+.header-nav {
+    display: flex;
+    align-items: flex-end;
+    padding-top: $layout-spacing * 2;
+    padding-bottom: $layout-spacing * 2;
+    border-bottom: 1px solid $color-border;
+
+    > ul {
+        @include unstyled-list;
+        display: flex;
+        
+        > li {
+            > a {
+                position: relative;
+                display: inline-block;
+                text-decoration: none;
+                @include animation-sliding-line;
+            }
+
+            &:not(:last-child) {
+                margin-right: $layout-spacing;
+            }
+        }
+    }
+
+    > *:not(:last-child) {
+        margin-right: $layout-spacing;
+    }
+    
+    > ul.nav-primary {
+        flex-grow: 1;
+    }
+
+    > a.nav-brand img {
+        display: block;
+        height: 1.5em;
+        width: 1.5em;
+        border-radius: 2px;
+    }
+}

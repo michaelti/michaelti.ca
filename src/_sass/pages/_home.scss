@@ -1,0 +1,31 @@
+// Home page main heading
+.home-title {
+    font-size: 2.5em;
+    margin-bottom: 0;
+
+    // Blinking cursor effect for typewriter heading
+    > span:first-child {
+        $cursor-space: 0.25em;
+        $cursor-width: 0.3em;
+        $cursor-height: 0.7em;
+        
+        padding-right: $cursor-space + $cursor-width;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            width: $cursor-width;
+            height: $cursor-height;
+            margin-left: $cursor-space;
+            margin-right: - ($cursor-space + $cursor-width);
+            background-color: $color-text;
+            animation: 2s ease 1s infinite cursorBlink;
+
+            @keyframes cursorBlink {
+                0%   { opacity: 1; }
+                50%  { opacity: 0; }
+                100% { opacity: 1; }
+            }
+        }
+    }
+}

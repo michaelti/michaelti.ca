@@ -1,10 +1,28 @@
 ---
 ---
 
-@import 'normalize';
-@import 'font-face';
-@import 'colors';
+// Vendor-provided dependencies
+@import 'vendor/normalize';
+
+// @font-face rules for custom fonts
+@import 'custom-fonts';
+
+// Authored mixins
+@import 'global-mixins';
+
+// Authored partials
+@import 'global-variables';
 @import 'layout';
-@import 'icons';
+@import 'typography';
 @import 'utilities';
-@import 'styles';
+
+// Authored section-specific partials
+@import 'sections/header';
+@import 'sections/footer';
+@import 'sections/portfolio-grid';
+@import 'sections/post-navigation';
+@import 'sections/page-header';
+
+// Authored page-specific partials
+@import 'pages/home';
+@import 'pages/post';

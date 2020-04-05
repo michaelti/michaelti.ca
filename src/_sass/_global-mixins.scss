@@ -1,0 +1,44 @@
+// Card styles, basic for now
+@mixin card {
+    background-color: $color-background-card;
+    border-radius: $border-radius-card;
+    box-shadow: $box-shadow-card;
+}
+
+// Reset styles for list elements 
+@mixin unstyled-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+// Animation: sliding line effect under element on hover, active, focus
+@mixin animation-sliding-line {
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $color-link;
+        border-radius: $border-radius-card;
+        transform-origin: 100% 0;
+        transform: scaleX(0);
+        transition: transform 0.15s ease;
+    }
+
+    &:hover, &:active, &:focus, &.active {
+        &::after {
+            transform-origin: 0 0;
+            transform: scale(1);
+        }
+    }
+}
+
+// Responsive breakpoint, very basic for now
+@mixin breakpoint-large {
+    @media (min-width: $breakpoint-large) {
+        @content;
+    }
+}

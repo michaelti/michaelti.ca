@@ -1,0 +1,36 @@
+// Responsive embeds/images at a given aspect ratio
+.responsive-ratio {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    > img {
+        object-fit: contain;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+    }
+
+    &-1by1::before  { padding-bottom: 100%; }
+    &-2by1::before  { padding-bottom: 50%; }
+    &-16by9::before { padding-bottom: (9 / 16) * 100%; }
+    &-21by9::before { padding-bottom: (9 / 21) * 100%; }
+}
+
+// Inline SVG icon styles for Font Awesome icons. Very basic for now.
+svg.fa-svg-inline {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    vertical-align: -0.125em;
+}
