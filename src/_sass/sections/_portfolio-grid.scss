@@ -1,0 +1,44 @@
+// Main portfolio list/grid layout
+.portfolio-grid {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-gap: $layout-spacing;
+
+    // Each portfolio item card
+    > a.portfolio-item {
+        display: flex;
+        align-items: center;
+        position: relative;
+        text-decoration: none;
+        @include card;
+        @include animation-sliding-line;
+
+        > .portfolio-item-thumbnail {
+            flex: 0 0 25%;
+            max-width: 100px;
+            padding: $layout-spacing;
+        }
+    
+        > .portfolio-item-body {
+            flex: 1 1 auto;
+            padding: $layout-spacing;
+            padding-right: 0;
+            
+            > h2 {
+                margin-top: 0;
+                margin-bottom: 0;
+                font-size: 1em;
+                @include breakpoint-large {
+                    font-size: 1.25em;
+                }
+            }
+    
+            > p {
+                margin-top: 0.25em;
+                margin-bottom: 0;
+                line-height: 1.25em;
+                color: $color-text;
+            }
+        }
+    }
+}

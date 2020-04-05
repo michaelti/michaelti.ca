@@ -1,0 +1,23 @@
+body {
+    color: $color-text;
+    font-family: $font-family-body;
+    font-weight: $font-weight-body;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-heading;
+    font-weight: $font-weight-heading;
+    margin-top: $layout-spacing * 2;
+    margin-bottom: $layout-spacing * 2;
+}
+
+// Line heights
+p, ol, ul {
+    line-height: 1.5em;
+}
+
+// Links
+a {
+    color: $color-link;
+}

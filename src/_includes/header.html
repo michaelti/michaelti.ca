@@ -1,6 +1,6 @@
 <header>
     <div class="container">
-        <nav>
+        <nav class="header-nav">
             <!-- Home link / Logo -->
             <a href="/" class="nav-brand">
                 <img src="/assets/images/logo-michaelti.svg" alt="michaelti.ca">
@@ -18,7 +18,7 @@
             </ul>
 
             <!-- Secondary external links / icons -->
-            <ul class="nav-secondary">
+            <ul>
                 {% for item in site.data.navigation.secondary %}
                     <li>
                         <a href="{{ item.link }}" title="{{ item.title }}" aria-label="{{ item.title }}" target="_blank" rel="noreferrer">
