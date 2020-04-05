@@ -22,7 +22,7 @@
         height: 2px;
         width: 100%;
         background-color: $color-link;
-        border-radius: 2px;
+        border-radius: $border-radius-card;
         transform-origin: 100% 0;
         transform: scaleX(0);
         transition: transform 0.15s ease;
@@ -38,7 +38,7 @@
 
 // Responsive breakpoint, very basic for now
 @mixin breakpoint-large {
-    @media (min-width: 480px) {
+    @media (min-width: $breakpoint-large) {
         @content;
     }
 }
