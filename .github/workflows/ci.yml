@@ -11,17 +11,31 @@ jobs:
     steps:
     - name: Check-out the repository
       uses: actions/checkout@v2
+      
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x 
+
     - name: Run a one-line script
       run: echo Hello, world!
+
     - name: Install bundler
       run: gem install bundler
+      
+    - name: Set up cache for installed gems
+      uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: bundle-use-ruby-${{ runner.os }}-${{ runner.ruby }}-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          bundle-use-ruby-${{ runner.os }}-${{ runner.ruby }}-
+
     - name: Bundle install gems
-      run: bundle install --jobs 4 --retry 3
+      run: bundle install --jobs 4 --retry 3 --path vendor/bundle
+
     - name: Build Jekyll website
       run: bundle exec jekyll build
+
     - name: List directory contents
       run: ls -la
