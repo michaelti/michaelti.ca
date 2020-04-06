@@ -17,9 +17,6 @@ jobs:
       with:
         ruby-version: 2.6.x 
 
-    - name: Run a one-line script
-      run: echo Hello, world!
-
     - name: Install bundler
       run: gem install bundler
       
@@ -39,5 +36,5 @@ jobs:
     - name: Build Jekyll website
       run: bundle exec jekyll build
 
-    - name: List directory contents
-      run: ls -la
+    - name: List build directory contents
+      run: ls -la build/
