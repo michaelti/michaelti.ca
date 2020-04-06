@@ -15,8 +15,11 @@ jobs:
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: 2.6.x 
-      
+        ruby-version: 2.6.x
+
+    - name: Install bundler
+      run: gem install bundler
+
     - name: Set up cache for installed gems
       uses: actions/cache@v1
       with:
