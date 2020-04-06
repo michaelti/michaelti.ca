@@ -32,7 +32,9 @@ jobs:
           bundle-use-ruby-${{ runner.os }}-${{ runner.ruby }}-
 
     - name: Bundle install gems
-      run: bundle install --jobs 4 --retry 3 --path vendor/bundle
+      run: |
+        bundle config path vendor/bundle
+        bundle install --jobs 4 --retry 3
 
     - name: Build Jekyll website
       run: bundle exec jekyll build
