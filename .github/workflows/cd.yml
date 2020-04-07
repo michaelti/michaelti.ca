@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Continuous Delivery
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Actions
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -36,13 +36,32 @@ jobs:
 
     - name: Build Jekyll website
       run: bundle exec jekyll build
-
-    - name: Deploy to server
-      uses: easingthemes/ssh-deploy@v2.0.9
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
-        ARGS: "-avzrch --delete"
-        SOURCE: "build/"
-        REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
-        REMOTE_USER: ${{ secrets.DEPLOY_USER }}
-        TARGET: ${{ secrets.DEPLOY_TARGET }}
+    
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: build
+        path: build
+  
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Download build artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: build
+    - name: list
+      run: ls -la
+    
+#     - name: Deploy to server via rsync
+#       uses: easingthemes/ssh-deploy@v2.0.9
+#       env:
+#         SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+#         ARGS: "-azr --delete"
+#         SOURCE: "build/"
+#         REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
+#         REMOTE_USER: ${{ secrets.DEPLOY_USER }}
+#         TARGET: ${{ secrets.DEPLOY_TARGET }}
+  
