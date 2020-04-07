@@ -1,0 +1,66 @@
+name: Continuous Delivery
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check-out the repository
+      uses: actions/checkout@v2
+      
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: .ruby-version
+
+    - name: Install bundler
+      run: gem install bundler
+
+    - name: Set up cache for installed gems
+      uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: gems-${{ runner.os }}-${{ hashFiles('.ruby-version') }}-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          gems-${{ runner.os }}-${{ hashFiles('.ruby-version') }}-
+
+    - name: Bundle install gems
+      run: |
+        bundle config path vendor/bundle
+        bundle install --jobs 4 --retry 3
+
+    - name: Build Jekyll website
+      run: bundle exec jekyll build
+    
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: build
+        path: build
+  
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+    - name: Download build artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: build
+    
+    - name: Deploy build to server via rsync over SSH
+      uses: easingthemes/ssh-deploy@v2.0.9
+      env:
+        SOURCE: "build/"
+        ARGS: "-avzr --no-perms --no-owner --no-group --delete"
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+        REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
+        REMOTE_USER: ${{ secrets.DEPLOY_USER }}
+        TARGET: ${{ secrets.DEPLOY_TARGET }}
+  
