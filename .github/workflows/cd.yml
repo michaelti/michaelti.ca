@@ -2,7 +2,7 @@ name: Continuous Delivery
 
 on:
   push:
-    branches: [ master, gh-actions-2 ]
+    branches: [ master ]
 
 jobs:
   build:
