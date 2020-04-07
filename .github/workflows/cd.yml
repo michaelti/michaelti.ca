@@ -54,7 +54,7 @@ jobs:
       with:
         name: build
     
-    - name: Deploy build to server via rsync
+    - name: Deploy build to server via rsync over SSH
       uses: easingthemes/ssh-deploy@v2.0.9
       env:
         SOURCE: "build/"
