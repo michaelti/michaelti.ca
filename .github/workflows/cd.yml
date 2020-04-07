@@ -13,10 +13,10 @@ jobs:
     - name: Check-out the repository
       uses: actions/checkout@v2
       
-    - name: Set up Ruby 2.6.5
-      uses: actions/setup-ruby@v1
+    - name: Set up Ruby from .ruby-version
+      uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6.5
+        ruby-version: .ruby-version
 
     - name: Install bundler
       run: gem install bundler
@@ -25,9 +25,7 @@ jobs:
       uses: actions/cache@v1
       with:
         path: vendor/bundle
-        key: bundle-use-ruby-${{ runner.os }}-${{ hashFiles('.ruby-version') }}-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          bundle-use-ruby-${{ runner.os }}-${{ hashFiles('.ruby-version') }}-
+        key: bundle-use-${{ runner.os }}-${{ hashFiles('.ruby-version') }}-${{ hashFiles('**/Gemfile.lock') }}
 
     - name: Bundle install gems
       run: |
