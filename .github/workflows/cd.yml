@@ -53,16 +53,14 @@ jobs:
       uses: actions/download-artifact@v1
       with:
         name: build
-    - name: list
-      run: ls -la
     
-#     - name: Deploy to server via rsync
-#       uses: easingthemes/ssh-deploy@v2.0.9
-#       env:
-#         SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
-#         ARGS: "-azr --delete"
-#         SOURCE: "build/"
-#         REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
-#         REMOTE_USER: ${{ secrets.DEPLOY_USER }}
-#         TARGET: ${{ secrets.DEPLOY_TARGET }}
+    - name: Deploy build to server via rsync
+      uses: easingthemes/ssh-deploy@v2.0.9
+      env:
+        SOURCE: "build/"
+        ARGS: "-azr --delete"
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+        REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
+        REMOTE_USER: ${{ secrets.DEPLOY_USER }}
+        TARGET: ${{ secrets.DEPLOY_TARGET }}
   
