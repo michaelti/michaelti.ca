@@ -25,7 +25,9 @@ jobs:
       uses: actions/cache@v1
       with:
         path: vendor/bundle
-        key: bundle-use-${{ runner.os }}-${{ hashFiles('.ruby-version') }}-${{ hashFiles('**/Gemfile.lock') }}
+        key: gems-${{ runner.os }}-${{ hashFiles('.ruby-version') }}-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          gems-${{ runner.os }}-${{ hashFiles('.ruby-version') }}-
 
     - name: Bundle install gems
       run: |
