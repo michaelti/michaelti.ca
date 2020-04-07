@@ -21,7 +21,7 @@ jobs:
     - name: Install bundler
       run: gem install bundler
 
-    - name: Set up cache for gems
+    - name: Set up cache for installed gems
       uses: actions/cache@v1
       with:
         path: vendor/bundle
