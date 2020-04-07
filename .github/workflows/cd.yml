@@ -2,7 +2,7 @@ name: Continuous Delivery
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, gh-actions-2 ]
 
 jobs:
   build:
@@ -58,7 +58,7 @@ jobs:
       uses: easingthemes/ssh-deploy@v2.0.9
       env:
         SOURCE: "build/"
-        ARGS: "-rltgoDzvO --delete"
+        ARGS: "-avzr --no-perms --no-owner --no-group --delete"
         SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
         REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
         REMOTE_USER: ${{ secrets.DEPLOY_USER }}
