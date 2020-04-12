@@ -4,12 +4,7 @@ $container-width: 640px;
 $breakpoint-large: 480px;
 
 // Colours
-$color-background: #f7f7f7;
-$color-background-card: #fdfdfd;
-$color-background-well: #f0f0f0;
-$color-text: #272727;
-$color-link: #0077ba;
-$color-border: rgba(0, 0, 0, 0.15);
+
 
 // Typography
 $font-family-body: 'Roboto Slab', serif;
@@ -24,3 +19,23 @@ $box-shadow-card:
 
 // Border radius
 $border-radius-card: 2px;
+
+:root {
+    --color-background: #f7f7f7;
+    --color-background-card: #fdfdfd;
+    --color-background-well: #f0f0f0;
+    --color-text: #272727;
+    --color-link: #0077ba;
+    --color-border: rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: #2e2e2e;
+        --color-background-card: #3e3e3e;
+        --color-background-well: #2a2a2a;
+        --color-text: #f7f7f7;
+        --color-link: #009bf2;
+        --color-border: rgba(255, 255, 255, 0.15);
+    }
+  }
