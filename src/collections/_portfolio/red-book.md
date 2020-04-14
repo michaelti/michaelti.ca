@@ -1,7 +1,7 @@
 ---
 title: Red Book by HPL
 teaser: Searching community information in Hamilton
-thumbnail: /assets/images/portfolio/thumbnails/red-book.png
+thumbnail: /assets/images/portfolio/thumbnails/red-book.svg
 order: 2
 ---
 
