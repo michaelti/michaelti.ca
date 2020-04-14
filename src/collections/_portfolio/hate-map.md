@@ -1,7 +1,7 @@
 ---
 title: Hate Map
 teaser: Tracking extremist ideologies across Canada
-thumbnail: /assets/images/portfolio/thumbnails/hate-map.png
+thumbnail: /assets/images/portfolio/thumbnails/hate-map.svg
 order: 1
 ---
 

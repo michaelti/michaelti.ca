@@ -1,7 +1,7 @@
 ---
 title: Centre for Free Expression
 teaser: Building a hub for education, research and advocacy
-thumbnail: /assets/images/portfolio/thumbnails/centre-for-free-expression.png
+thumbnail: /assets/images/portfolio/thumbnails/centre-for-free-expression.svg
 order: 5
 ---
 

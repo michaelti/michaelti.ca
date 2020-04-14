@@ -1,7 +1,7 @@
 ---
 title: 3D Project Hub
 teaser: Bringing campus fabrication labs online
-thumbnail: /assets/images/portfolio/thumbnails/3d-project-hub.png
+thumbnail: /assets/images/portfolio/thumbnails/3d-project-hub.svg
 order: 4
 ---
 

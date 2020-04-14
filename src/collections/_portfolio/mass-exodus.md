@@ -1,7 +1,7 @@
 ---
 title: Mass Exodus
 teaser: Dressing up an annual fashion show
-thumbnail: /assets/images/portfolio/thumbnails/mass-exodus.png
+thumbnail: /assets/images/portfolio/thumbnails/mass-exodus.svg
 order: 6
 ---
 
