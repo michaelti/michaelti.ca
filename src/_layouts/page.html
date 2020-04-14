@@ -5,7 +5,13 @@ layout: default
     <div class="container">
         <header>
             {% if page.thumbnail %}
-                <img class="page-thumbnail" src="{{ page.thumbnail }}" alt="">
+                <picture>
+                    {% if page.thumbnail_dark %}
+                        <source media="(prefers-color-scheme: light)" srcset="{{ page.thumbnail }}">
+                        <source media="(prefers-color-scheme: dark)" srcset="{{ page.thumbnail_dark }}"> 
+                    {% endif %}
+                    <img class="page-thumbnail" src="{{ page.thumbnail }}" alt="">
+                </picture>
             {% endif %}
             <h1>{{ page.title }}</h1>
         </header>
