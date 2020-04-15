@@ -18,8 +18,7 @@ $box-shadow-card:
 $border-radius-card: 2px;
 
 // Colours
-:root {
-    // Light theme
+@mixin colors-theme-light {
     --color-background: #f7f7f7;
     --color-background-card: #fdfdfd;
     --color-background-well: #f0f0f0;
@@ -28,16 +27,27 @@ $border-radius-card: 2px;
     --color-border: rgba(0, 0, 0, 0.15);
     --color-overlay: rgba(255, 255, 255, 0.25);
 }
+@mixin colors-theme-dark {
+    --color-background: #37393e;
+    --color-background-card: #40444b;
+    --color-background-well: #2f3136;
+    --color-text: #f7f7f7;
+    --color-link: #12aaff;
+    --color-border: rgba(255, 255, 255, 0.15);
+    --color-overlay: rgba(0, 0, 0, 0.25);
+}
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        // Dark theme
-        --color-background: #37393e;
-        --color-background-card: #40444b;
-        --color-background-well: #2f3136;
-        --color-text: #f7f7f7;
-        --color-link: #12aaff;
-        --color-border: rgba(255, 255, 255, 0.15);
-        --color-overlay: rgba(0, 0, 0, 0.25);
+// CSS custom properties (variables)
+:root {
+    @include colors-theme-light;
+
+    &[data-user-color-scheme="dark"] {
+        @include colors-theme-dark;
+    }
+
+    &:not([data-user-color-scheme]) {
+        @media (prefers-color-scheme: dark) {
+            @include colors-theme-dark;
+        }
     }
 }
