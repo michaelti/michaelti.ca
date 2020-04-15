@@ -3,9 +3,6 @@ $layout-spacing: 15px;
 $container-width: 640px;
 $breakpoint-large: 480px;
 
-// Colours
-
-
 // Typography
 $font-family-body: 'Roboto Slab', serif;
 $font-family-heading: 'Muli', sans-serif;
@@ -20,7 +17,9 @@ $box-shadow-card:
 // Border radius
 $border-radius-card: 2px;
 
+// Colours
 :root {
+    // Light theme
     --color-background: #f7f7f7;
     --color-background-card: #fdfdfd;
     --color-background-well: #f0f0f0;
@@ -32,6 +31,7 @@ $border-radius-card: 2px;
 
 @media (prefers-color-scheme: dark) {
     :root {
+        // Dark theme
         --color-background: #37393e;
         --color-background-card: #40444b;
         --color-background-well: #2f3136;
