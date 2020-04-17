@@ -44,7 +44,7 @@
         }
     };
 
-    // Make the correct default from all picture <source> elements with the desired color scheme
+    // Make a default from all picture <source> elements with the desired color scheme
     const setPicturesThemed = (setting) => {
         document.querySelectorAll('picture > source[data-user-theme]').forEach(el => {
             el.remove();
