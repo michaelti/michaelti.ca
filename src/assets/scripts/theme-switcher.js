@@ -1,72 +1,67 @@
-// Key to use for localStorage of color scheme setting
-const STORAGE_KEY = 'user-color-scheme';
+// Key to use for localStorage of theme setting
+const THEME_STORAGE_KEY = 'user-theme';
 
 // Button element selectors
-const modeToggleButton = document.querySelector('.js-mode-toggle');
-const modeToggleText = document.querySelector('.js-mode-toggle-text');
-
-// Media query info for default system color scheme
-let isSystemDark = window.matchMedia('(prefers-color-scheme: dark)');
-
+const modeToggleButton = document.querySelector('#js-btn-theme-switcher');
+const iconLight = document.querySelector('#js-btn-theme-switcher > .icon-light');
+const iconDark = document.querySelector('#js-btn-theme-switcher > .icon-dark');
+const iconAutomatic = document.querySelector('#js-btn-theme-switcher > .icon-automatic');
 
 
-// Find out the user's default system color scheme, 'light' or 'dark'
-const getSystemColorScheme = () => {
-    return isSystemDark.matches ? 'dark' : 'light';
-};
-
-// Takes either a string ('light'|'dark') or gets that from localStorage.
-// If it can’t find the setting in either, it tries to load the default system color scheme.
-const applySetting = passedSetting => {
-    let currentSetting = passedSetting || localStorage.getItem(STORAGE_KEY);
-    
-    if(currentSetting) {
-        document.documentElement.setAttribute('data-user-color-scheme', currentSetting);
-        setButtonLabelAndStatus(currentSetting);
+// Takes a theme setting string ('light'|'dark'|null) and applies it
+const applySetting = (setting) => {    
+    if (setting) {
+        localStorage.setItem(THEME_STORAGE_KEY, setting);
+        document.documentElement.setAttribute('data-user-theme', setting);
+    } else {
+        localStorage.removeItem(THEME_STORAGE_KEY);
+        document.documentElement.removeAttribute('data-user-theme');
     }
-    else {
-        setButtonLabelAndStatus(getSystemColorScheme());
-    }
+
+    setButtonAttributes(setting);
 }
 
-// Gets the current setting, reverses it, and stores it
-const toggleSetting = () => {
-    let currentSetting = localStorage.getItem(STORAGE_KEY);
-    
-    switch(currentSetting) {
+// Set the theme switcher button's active icon and label
+const setButtonAttributes = (setting) => { 
+    iconLight.classList.remove('active');
+    iconDark.classList.remove('active');
+    iconAutomatic.classList.remove('active');
+
+    switch(setting) {
         case null:
-            currentSetting = getSystemColorScheme() === 'dark' ? 'light' : 'dark';
+            iconAutomatic.classList.add('active');
+            modeToggleButton.setAttribute('aria-label', 'Switch to light theme (currently using automatic)');
             break;
         case 'light':
-            currentSetting = 'dark';
+            iconLight.classList.add('active');
+            modeToggleButton.setAttribute('aria-label', 'Switch to dark theme (currently using light)');
             break;
         case 'dark':
-            currentSetting = 'light';
+            iconDark.classList.add('active');
+            modeToggleButton.setAttribute('aria-label', 'Switch to automatic theme (currently using dark)');
             break;
     }
-
-    localStorage.setItem(STORAGE_KEY, currentSetting);
-    
-    return currentSetting;
 }
 
-// Shared method for setting the button text label etc
-const setButtonLabelAndStatus = currentSetting => { 
-    modeToggleText.innerText = `Switch to ${currentSetting === 'dark' ? '🌞 light' : '🌚 dark'} theme`;
+// Gets the current theme from localStorage and returns the next possible setting
+const getNextSetting = () => {    
+    switch (localStorage.getItem(THEME_STORAGE_KEY)) {
+        case null:
+            return 'light';
+        case 'light':
+            return 'dark';
+        case 'dark':
+            return null;
+    }
 }
 
 
-// Attach listener to button which applies the setting returned from toggleSetting
+// Attach listener to the button which applies the next setting
 modeToggleButton.addEventListener('click', () => {    
-    applySetting(toggleSetting());
-});
-
-// Attach listener to apply the correct setting when default system color scheme changes 
-isSystemDark.addEventListener('change', () => {
-    applySetting();
+    applySetting(getNextSetting());
 });
 
 // Attach listener to apply the correct setting on page load
 document.addEventListener('DOMContentLoaded', () => {
-    applySetting();
+    applySetting(localStorage.getItem(THEME_STORAGE_KEY));
 });

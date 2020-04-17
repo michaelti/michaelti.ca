@@ -22,6 +22,7 @@ $border-radius-card: 2px;
     --color-background: #f7f7f7;
     --color-background-card: #fdfdfd;
     --color-background-well: #f0f0f0;
+    --color-background-well-deep: #d7d7d7;
     --color-text: #272727;
     --color-link: #0077ba;
     --color-border: rgba(0, 0, 0, 0.15);
@@ -31,6 +32,7 @@ $border-radius-card: 2px;
     --color-background: #37393e;
     --color-background-card: #40444b;
     --color-background-well: #2f3136;
+    --color-background-well-deep: #202225;
     --color-text: #f7f7f7;
     --color-link: #12aaff;
     --color-border: rgba(255, 255, 255, 0.15);
@@ -41,11 +43,11 @@ $border-radius-card: 2px;
 :root {
     @include colors-theme-light;
 
-    &[data-user-color-scheme="dark"] {
+    &[data-user-theme="dark"] {
         @include colors-theme-dark;
     }
 
-    &:not([data-user-color-scheme]) {
+    &:not([data-user-theme]) {
         @media (prefers-color-scheme: dark) {
             @include colors-theme-dark;
         }
