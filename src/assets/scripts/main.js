@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     (function() {
         mediumZoom('.post-content img', {
             margin: 15,
-            background: 'rgba(247, 247, 247, 0.5)',
+            background: 'var(--color-overlay)',
             scrollOffset: 0
         });
     })();
