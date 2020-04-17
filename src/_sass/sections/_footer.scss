@@ -1,7 +1,33 @@
 // Global footer
 body > footer {
     padding-top: $layout-spacing * 2;
-    padding-bottom: $layout-spacing * 2;
+    padding-bottom: $layout-spacing * 4;
     background-color: var(--color-background-well);
     border-top: 1px solid var(--color-border);
+}
+
+// Theme switcher button
+footer .btn-theme-switcher {
+    display: flex;
+    background-color: var(--color-background-well-deep);
+    padding: 0;
+    border: none;
+    outline: none;
+    color: inherit;
+    font-size: inherit;
+    border-radius: 2em;
+    cursor: pointer;
+
+    > span {
+        display: inline-block;
+        padding: 0.5em;
+        border-radius: 50%;
+        line-height: 1;
+
+        &.active {
+            background-color: var(--color-background-card);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+        }
+    }
 }
