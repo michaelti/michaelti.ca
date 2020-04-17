@@ -2,7 +2,7 @@
 title: weOwn
 teaser: Connecting people for better housing
 thumbnail: /assets/images/portfolio/thumbnails/weown.svg
-thumbnail_dark: /assets/images/portfolio/thumbnails/weown.svg#text-light
+thumbnail_dark: /assets/images/portfolio/thumbnails/weown.svg?#text-light
 order: 3
 ---
 
