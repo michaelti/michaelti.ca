@@ -6,26 +6,16 @@ body > footer {
     border-top: 1px solid var(--color-border);
 }
 
-// Theme switcher button styles
+// Theme switcher button
 footer .btn-theme-switcher {
-    padding: 0.5em 1em;
-    background: var(--color-background-card);
-    border: 1px solid var(--color-border);
-    color: inherit;
-    cursor: pointer;
-}
-
-// Theme switcher 2
-footer .btn-theme-switcher {
+    display: flex;
+    background-color: var(--color-background-well-deep);
     padding: 0;
     border: none;
-    background-color: var(--color-background-well-deep);
     color: inherit;
     font-size: inherit;
+    border-radius: 2em;
     cursor: pointer;
-    position: relative;
-    border-radius: 999px;
-    display: flex;
 
     > span {
         display: inline-block;
