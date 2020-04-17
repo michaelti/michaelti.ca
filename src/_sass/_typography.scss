@@ -1,5 +1,5 @@
 body {
-    color: $color-text;
+    color: var(--color-text);
     font-family: $font-family-body;
     font-weight: $font-weight-body;
 }
@@ -19,5 +19,5 @@ p, ol, ul {
 
 // Links
 a {
-    color: $color-link;
+    color: var(--color-link);
 }

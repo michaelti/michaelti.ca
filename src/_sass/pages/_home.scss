@@ -18,7 +18,7 @@
             height: $cursor-height;
             margin-left: $cursor-space;
             margin-right: - ($cursor-space + $cursor-width);
-            background-color: $color-text;
+            background-color: var(--color-text);
             animation: 2s ease 1s infinite cursorBlink;
 
             @keyframes cursorBlink {

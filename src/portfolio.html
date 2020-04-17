@@ -12,9 +12,13 @@ permalink: /portfolio/
                 <p>{{ item.teaser }}</p>
             </div>
             <div class="portfolio-item-thumbnail">
-                <div class="responsive-ratio responsive-ratio-1by1">
+                <picture class="responsive-ratio responsive-ratio-1by1">
+                    {% if item.thumbnail_dark %}
+                        <source media="(prefers-color-scheme: light)" srcset="{{ item.thumbnail }}">
+                        <source media="(prefers-color-scheme: dark)" srcset="{{ item.thumbnail_dark }}"> 
+                    {% endif %}
                     <img src="{{ item.thumbnail }}" alt="">
-                </div>
+                </picture>
             </div>
         </a>
     {% endfor %}
