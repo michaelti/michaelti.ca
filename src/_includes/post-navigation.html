@@ -6,9 +6,13 @@
             </span>
             {% if page.previous.thumbnail %}       
                 <div class="post-navigation-thumbnail">
-                    <div class="responsive-ratio responsive-ratio-1by1">
+                    <picture class="responsive-ratio responsive-ratio-1by1">
+                        {% if page.previous.thumbnail_dark %}
+                            <source media="(prefers-color-scheme: light)" srcset="{{ page.previous.thumbnail }}">
+                            <source media="(prefers-color-scheme: dark)" srcset="{{ page.previous.thumbnail_dark }}"> 
+                        {% endif %}
                         <img src="{{ page.previous.thumbnail }}" alt="">
-                    </div>
+                    </picture>
                 </div>
             {% endif %}
             <span class="post-navigation-text">
@@ -24,9 +28,13 @@
             </span>
             {% if page.next.thumbnail %}
                 <div class="post-navigation-thumbnail">
-                    <div class="responsive-ratio responsive-ratio-1by1">
+                    <picture class="responsive-ratio responsive-ratio-1by1">
+                        {% if page.next.thumbnail_dark %}
+                            <source media="(prefers-color-scheme: light)" srcset="{{ page.next.thumbnail }}">
+                            <source media="(prefers-color-scheme: dark)" srcset="{{ page.next.thumbnail_dark }}"> 
+                        {% endif %}
                         <img src="{{ page.next.thumbnail }}" alt="">
-                    </div>
+                    </picture>
                 </div>
             {% endif %}
             <span>

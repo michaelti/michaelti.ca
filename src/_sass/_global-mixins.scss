@@ -1,6 +1,6 @@
 // Card styles, basic for now
 @mixin card {
-    background-color: $color-background-card;
+    background-color: var(--color-background-card);
     border-radius: $border-radius-card;
     box-shadow: $box-shadow-card;
 }
@@ -21,7 +21,7 @@
         bottom: 0;
         height: 2px;
         width: 100%;
-        background-color: $color-link;
+        background-color: var(--color-link);
         border-radius: $border-radius-card;
         transform-origin: 100% 0;
         transform: scaleX(0);
@@ -31,7 +31,7 @@
     &:hover, &:active, &:focus, &.active {
         &::after {
             transform-origin: 0 0;
-            transform: scale(1);
+            transform: scaleX(1);
         }
     }
 }
