@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Apply medium zoom effect to images in post content
+    // Apply medium zoom effect to images in portfolio content
     (function() {
         mediumZoom('.portfolio-content img', {
             margin: 0,
