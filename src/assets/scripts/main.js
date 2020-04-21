@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Apply medium zoom effect to images in post content
     (function() {
         mediumZoom('.post-content img', {
-            margin: 15,
-            background: 'var(--color-overlay)',
+            margin: 0,
+            background: 'var(--color-background)',
             scrollOffset: 0
         });
     })();

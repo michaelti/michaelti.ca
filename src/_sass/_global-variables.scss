@@ -26,7 +26,6 @@ $border-radius-card: 2px;
     --color-text: #272727;
     --color-link: #0077ba;
     --color-border: rgba(0, 0, 0, 0.15);
-    --color-overlay: rgba(255, 255, 255, 0.25);
 }
 @mixin colors-theme-dark {
     --color-background: #37393e;
@@ -36,7 +35,6 @@ $border-radius-card: 2px;
     --color-text: #f7f7f7;
     --color-link: #12aaff;
     --color-border: rgba(255, 255, 255, 0.15);
-    --color-overlay: rgba(0, 0, 0, 0.25);
 }
 
 // CSS custom properties (variables)

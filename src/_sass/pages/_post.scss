@@ -8,13 +8,3 @@
     margin-bottom: $layout-spacing * 2;
     @include card;
 }
-
-// Extra styles for medium-zoom library effect
-.medium-zoom-overlay {
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-}
-
-.medium-zoom-image--opened {
-    @include card;
-}
