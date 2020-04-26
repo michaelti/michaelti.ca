@@ -1,6 +1,7 @@
 // Responsive images and videos in post content
 .post-content img,
-.post-content video {
+.post-content video,
+.post-content .post-video {
     display: block;
     width: 100%;
     height: auto;
