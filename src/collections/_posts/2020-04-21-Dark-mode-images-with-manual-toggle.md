@@ -8,7 +8,7 @@ excerpt: >
 
 For nighthawks like myself, automatic light and dark themes becoming mainstream has been nothing short of delightful.
 
-With the `prefers-color-scheme` CSS media query now [supported by all major browsers](https://caniuse.com/#feat=prefers-color-scheme), it's easy to get going with automatic themes on your website or app.
+With the `prefers-color-scheme` CSS media query now [supported by all major browsers](https://caniuse.com/#feat=prefers-color-scheme), it's easy to get started with automatic themes on your website or app.
 
 Using the `<picture>` element and `media` attribute, it's also pretty simple to natively serve different images based on your users' colour preference:
 
