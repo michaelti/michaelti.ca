@@ -41,5 +41,6 @@
         margin-top: $layout-spacing;
         margin-right: $layout-spacing;
         @include card;
+        @include animation-sliding-line;
     }
 }
