@@ -9,7 +9,6 @@ nav.post-navigation {
     > a {
         display: flex;
         align-items: center;
-        position: relative;
         text-decoration: none;
         @include animation-sliding-line;
 

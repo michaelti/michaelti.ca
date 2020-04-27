@@ -8,7 +8,6 @@
     > a.portfolio-item {
         display: flex;
         align-items: center;
-        position: relative;
         text-decoration: none;
         @include card;
         @include animation-sliding-line;
