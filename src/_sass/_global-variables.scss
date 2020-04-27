@@ -19,6 +19,7 @@ $border-radius-card: 2px;
 
 // Colours
 @mixin colors-theme-light {
+    --color-brand: #0077ba;
     --color-background: #f7f7f7;
     --color-background-card: #fdfdfd;
     --color-background-well: #f0f0f0;
@@ -28,6 +29,7 @@ $border-radius-card: 2px;
     --color-border: rgba(0, 0, 0, 0.15);
 }
 @mixin colors-theme-dark {
+    --color-brand: #0077ba;
     --color-background: #37393e;
     --color-background-card: #40444b;
     --color-background-well: #2f3136;
