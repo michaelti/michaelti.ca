@@ -6,11 +6,9 @@ excerpt: >
 
 <!-- excerpt -->
 
-For nighthawks like myself, automatic light and dark themes becoming mainstream has been nothing short of delightful.
+With the `prefers-color-scheme` CSS media query now [supported by all major browsers](https://caniuse.com/#feat=prefers-color-scheme), it's easy to get started with automatic themes on websites and apps.
 
-With the `prefers-color-scheme` CSS media query now [supported by all major browsers](https://caniuse.com/#feat=prefers-color-scheme), it's easy to get started with automatic themes on your website or app.
-
-Using the `<picture>` element and `media` attribute, it's also pretty simple to natively serve different images based on your users' colour preference:
+Using the `<picture>` element and `media` attribute, we can take things a step further and serve different images based on a user's system colour preference:
 
 ```html
 <picture>
@@ -22,27 +20,29 @@ Using the `<picture>` element and `media` attribute, it's also pretty simple to 
 
 But as [Rhys Lloyd points out](https://rhyslloyd.me/serve-dark-mode-images-natively/#inevitable-caveat), that falls short once you've added a manual switch for your themes using JavaScript – as I have in the footer of this website.
 
-Nothing that can't be cured with a little extra JavaScript spice! 🌶
+We can address that hiccup with just a little extra JavaScript spice! 🌶
 
 
-## The mission
+## The Goal
 
 Let's connect our `<picture>` elements that have light and dark sources to a script that manually switches between them, overriding the system setting. And let's do it without changing any of our existing markup from above.
 
-## The (basic) solution
+## The (Basic) Solution
 
 
 
-## The caveats
+## The Caveats
 
 
 
-## The complete demo
+## The Complete Demo (tl;dr)
 
 <iframe height="400" style="width: 100%;" scrolling="no" title="Native Dark Mode images w/ manual switch " src="https://codepen.io/michaelti/embed/ExVjMPr?height=400&theme-id=default&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
 
 
+## Conclusion
 
+Nighthawks rejoice!
 
 
 
