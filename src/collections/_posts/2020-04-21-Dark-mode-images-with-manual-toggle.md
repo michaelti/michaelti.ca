@@ -20,7 +20,7 @@ Using the `<picture>` element and `media` attribute, we can take things a step f
 
 But as [Rhys Lloyd points out](https://rhyslloyd.me/serve-dark-mode-images-natively/#inevitable-caveat), that falls short once you've added a [manual switch](https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode/) for your themes using JavaScript, like this one:
 
-<iframe height="50" style="width: 100%;" scrolling="no" title="Light/dark colour theme switcher" src="http://localhost:4000/assets/iframe-demos/theme-switch-button.html" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
+<iframe height="50" style="width: 100%;" scrolling="no" title="Light/dark colour theme switcher" src="http://localhost:4000/assets/iframe-demos/theme-switch-button.html" frameborder="no" loading="lazy"></iframe>
 
 ... which is because the `prefers-color-scheme` query doesn't know about our custom theme CSS selectors. Nor can we use CSS to manipulate the `<source>` elements in any meaningful way.
 
@@ -39,7 +39,7 @@ Let's connect our `<picture>` elements that have light and dark sources to a scr
 
 ### 1. The picture element
 
-The HTML5 `<picture>` element works by loading the first `<source>` that has its conditions met. For example, given two sources ...
+The HTML5 `<picture>` element works by loading the first `<source>` whose conditions are met. For example, given two sources ...
 
 ```html
 <source media="(prefers-color-scheme: light)" srcset="light version">
@@ -80,7 +80,7 @@ function setPicturesThemed(colorScheme) {
 
 This isn't as complicated as it looks! We're using an [ attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) to round up all the elements we want. `picture > source` gets all of the sources, then `[media=(prefers-color-scheme: ${colorScheme})]` narrows it down to the ones that match the function input of 'light' or 'dark'.
 
-For each of the matching sources we need to make a duplicate, remove its `media` attribute, and prepend it to the parent `<picture>` element. We'll also give it a custom data attribute for future reference. Here goes:
+For each of the matching sources we need to make a duplicate, remove its `media` attribute, and prepend it to the parent `<picture>` element. We'll also give it a custom data attribute for future reference. Here it goes:
 
 ```javascript
 document.querySelectorAll(...).forEach(el => {
@@ -157,16 +157,3 @@ Rudimentary as this approach is, here are a few things to note:
 In just 13 lines of JavaScript, we wrote a function to override the preferred colour scheme for all of the light and dark mode images on a given page.
 
 You may integrate this with the manual toggle switch on your website or app so your users will always be served the right themed image, day 🌞 or night 🌚.
-
-
-
-<!-- Temporary code theme -->
-<style>
-div.highlighter-rouge {
-    padding: 5px 15px;
-    background-color: var(--color-background-well);
-    overflow-x: scroll;
-    border-radius: 2px;
-    box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.15) inset;
-}
-</style>
