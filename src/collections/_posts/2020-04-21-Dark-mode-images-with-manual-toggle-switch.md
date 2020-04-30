@@ -6,7 +6,7 @@ excerpt: >
 
 <!-- excerpt -->
 
-With the `prefers-color-scheme` CSS media query now [supported by all major browsers](https://caniuse.com/#feat=prefers-color-scheme), it's easy to get started with automatic themes on websites and apps.
+With the `prefers-color-scheme` CSS media query now [supported by all major browsers](https://caniuse.com/#feat=prefers-color-scheme), it's easy to get started with automatic themes the web.
 
 Using the `<picture>` element and `media` attribute, we can take things a step further and serve different images based on a user's system colour preference:
 
@@ -22,9 +22,9 @@ But as [Rhys Lloyd points out](https://rhyslloyd.me/serve-dark-mode-images-nativ
 
 <iframe height="50" style="width: 100%;" scrolling="no" title="Light/dark colour theme switcher" src="http://localhost:4000/assets/iframe-demos/theme-switch-button.html" frameborder="no" loading="lazy"></iframe>
 
-... which is because the `prefers-color-scheme` query doesn't know about our custom theme CSS selectors. Nor can we use CSS to manipulate the `<source>` elements in any meaningful way.
+The image doesn't change! That's because the `prefers-color-scheme` query doesn't know about our bespoke theme switching implementation. Nor can we use CSS to manipulate the `<source>` elements in any meaningful way.
 
-We will address that inconvenience with a pinch of extra JavaScript spice! 🌶
+We will address that inconvenience with a little extra JavaScript spice.
 
 
 ## The Solution
@@ -46,7 +46,7 @@ The HTML5 `<picture>` element works by loading the first `<source>` whose condit
 <source media="(prefers-color-scheme: dark)" srcset="dark version">
 ```
 
-... then when the system colour scheme is set to light, it will only load the first source. If the system colour scheme is dark, it will skip the first source and load the second one.
+... when the system colour scheme is light, it only loads the first source. If the system colour scheme is dark, it skips the first source and loads the second one.
 
 This is great on its own, but we need a way to supersede both of these conditions in order to  display the image for an *overriden* colour preference.
 
@@ -93,7 +93,7 @@ document.querySelectorAll(...).forEach(el => {
 
 Perfect! Let's check out what we have so far by adding a couple of buttons:
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="Native Dark Mode images w/ manual switch (Demo 1)" src="https://codepen.io/michaelti/embed/JjYJQEz?height=300&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
+<iframe height="400" style="width: 100%;" scrolling="no" title="Native Dark Mode images w/ manual switch (Demo 1)" src="https://codepen.io/michaelti/embed/JjYJQEz?height=400&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
 
 ### 4. Almost there...
 
@@ -118,14 +118,13 @@ Finally, we'll get the main function to accept an empty string for the default c
 
 ```javascript
 function setPicturesThemed(colorScheme = '') {
-    // Remove all existing picture <source> elements with a "data-cloned-theme" attribute
-    // (i.e. clean up all the elements we create below)
+    // Clean up all existing picture sources with a "data-cloned-theme" attribute
     document.querySelectorAll('picture > source[data-cloned-theme]').forEach(el => {
         el.remove();
     });
 
     if (colorScheme) {
-        // Find all picture <source> elements with the desired color-scheme attribute
+        // Find all picture sources with the desired color-scheme attribute
         document.querySelectorAll(`picture > source[media="(prefers-color-scheme: ${colorScheme})"]`).forEach(el => {
             // 1. Clone the given <source>
             // 2. Remove the media attribute so the new <source> is unconditional
