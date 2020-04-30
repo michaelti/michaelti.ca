@@ -48,7 +48,14 @@
         /* General presentational styles */
         button {
             float: left;
+            margin: 0;
             margin-right: 15px;
+        }
+        img {
+            display: block;
+            height: 2rem;
+            width: 160px;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -60,9 +67,9 @@
     </button>
 
     <picture>
-        <source media="(prefers-color-scheme: light)" srcset="https://placehold.it/150x34/ffff00/000000?text=Light%20image">
-        <source media="(prefers-color-scheme: dark)" srcset="https://placehold.it/150x34/002244/ffffff?text=Dark%20image">
-        <img src="https://placehold.it/150x35?text=fallback" alt="" />
+        <source media="(prefers-color-scheme: light)" srcset="https://placehold.it/160x64/ffff00/000000?text=Light%20image">
+        <source media="(prefers-color-scheme: dark)" srcset="https://placehold.it/160x64/002244/ffffff?text=Dark%20image">
+        <img src="https://placehold.it/160x64?text=fallback" alt="" />
     </picture>
 
     <script>

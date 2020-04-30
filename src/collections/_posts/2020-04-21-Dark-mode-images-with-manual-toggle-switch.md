@@ -14,26 +14,26 @@ Using the `<picture>` element and `media` attribute, we can take things a step f
 <picture>
     <source media="(prefers-color-scheme: light)" srcset="light version">
     <source media="(prefers-color-scheme: dark)" srcset="dark version">
-    <img src="fallback" alt="" />
+    <img src="light version fallback" alt="" />
 </picture>
 ```
 
-But as [Rhys Lloyd points out](https://rhyslloyd.me/serve-dark-mode-images-natively/#inevitable-caveat), that falls short once you've added a [manual switch](https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode/) for your themes using JavaScript, like this one:
+But as [Rhys Lloyd points out](https://rhyslloyd.me/serve-dark-mode-images-natively/#inevitable-caveat), that falls short once you've added a [manual switch](https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode/) for your themes using JavaScript, like this example:
 
-<iframe height="50" style="width: 100%;" scrolling="no" title="Light/dark colour theme switcher" src="http://localhost:4000/assets/iframe-demos/theme-switch-button.html" frameborder="no" loading="lazy"></iframe>
+<iframe height="48" style="width: 100%;" scrolling="no" title="Light/dark colour theme switcher example" src="/assets/iframe-demos/theme-switch-button.html" frameborder="no" loading="lazy"></iframe>
 
 The image doesn't change! That's because the `prefers-color-scheme` query doesn't know about our bespoke theme switching implementation. Nor can we use CSS to manipulate the `<source>` elements in any meaningful way.
 
-We will address that inconvenience with a little extra JavaScript spice.
+We will address that inconvenience with a little extra JavaScript spice!
 
 
 ## The Solution
 
-Let's connect our `<picture>` elements that have light and dark sources to a script that manually switches between them, overriding the system setting. And let's do it without changing any of our existing markup from above.
+Let's connect our `<picture>` elements that have light and dark sources to a script that can manually switch between them, overriding the system setting. And let's do it without changing any of our existing markup from above.
 
-### ***TL;DR:*** A demo of our final implementation looks like this:
+### ***TL;DR:*** A demo of our final implementation will look like this:
 
-<iframe height="400" style="width: 100%;" scrolling="no" title="Native Dark Mode images w/ manual switch " src="https://codepen.io/michaelti/embed/ExVjMPr?height=400&theme-id=default&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Native Dark Mode images w/ manual switch" src="https://codepen.io/michaelti/embed/ExVjMPr?height=300&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
 
 ## How Does it Work?
 
@@ -50,9 +50,9 @@ The HTML5 `<picture>` element works by loading the first `<source>` whose condit
 
 This is great on its own, but we need a way to supersede both of these conditions in order to  display the image for an *overriden* colour preference.
 
-### 2. Override the sources
+### 2. Add an "override" source
 
-We can add a `<source>` to the beginning of our example which has *no* media condition, and will therefore always take precedence:
+To do that, we can simply place a new `<source>` on top of the others which has *no* media condition. It will therefore always take precedence and load:
 
 ```html
 <source srcset="override version">
@@ -62,10 +62,10 @@ We can add a `<source>` to the beginning of our example which has *no* media con
 
 ### 3. Connect with JavaScript
 
-Now we can write some code to dynamically insert that "override" source depending on which theme the user selects – for every `<picture>` site-wide. To accomplish this, we must:
+With that bit of knowledge, we can now write some code to insert an "override" source depending on which theme the user selects – for every `<picture>` on the page! To accomplish this, we must:
 
-1. Find every existing source that matches the desired colour scheme
-2. Make a duplicate of that source *without* the `media=""` condition
+1. Find every existing `<source>` that matches the desired colour scheme
+2. Place a duplicate of that source without its `media=""` condition
 3. Place the new source first in its `<picture>` element
 
 First, let's set up a function that takes the desired colour scheme, 'light' or 'dark', and finds all the sources that match it:
@@ -93,7 +93,7 @@ document.querySelectorAll(...).forEach(el => {
 
 Perfect! Let's check out what we have so far by adding a couple of buttons:
 
-<iframe height="400" style="width: 100%;" scrolling="no" title="Native Dark Mode images w/ manual switch (Demo 1)" src="https://codepen.io/michaelti/embed/JjYJQEz?height=400&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
+<iframe height="250" style="width: 100%;" scrolling="no" title="Native Dark Mode images w/ manual switch (Demo 1)" src="https://codepen.io/michaelti/embed/JjYJQEz?height=250&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
 
 ### 4. Almost there...
 
