@@ -6,7 +6,7 @@ excerpt: >
 
 <!-- excerpt -->
 
-With the `prefers-color-scheme` CSS media query now [supported by all major browsers](https://caniuse.com/#feat=prefers-color-scheme), it's easy to get started with automatic themes the web.
+With the `prefers-color-scheme` CSS media query now [supported by all major browsers](https://caniuse.com/#feat=prefers-color-scheme), it's easy to get started with automatic themes on the web.
 
 Using the `<picture>` element and `media` attribute, we can take things a step further and serve different images based on a user's system colour preference:
 
@@ -18,7 +18,7 @@ Using the `<picture>` element and `media` attribute, we can take things a step f
 </picture>
 ```
 
-But as [Rhys Lloyd points out](https://rhyslloyd.me/serve-dark-mode-images-natively/#inevitable-caveat), that falls short once you've added a [manual switch](https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode/) for your themes using JavaScript, like this example:
+But as [Rhys Lloyd points out](https://rhyslloyd.me/serve-dark-mode-images-natively/#inevitable-caveat "Rhys Lloyd - Serve 'dark mode' images natively"), that falls short once you've added a [manual switch](https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode/ "Andy Bell - Create a user controlled dark or light mode") for your themes using JavaScript, like in this example:
 
 <iframe height="48" style="width: 100%;" scrolling="no" title="Light/dark colour theme switcher example" src="/assets/iframe-demos/theme-switch-button.html" frameborder="no" loading="lazy"></iframe>
 
@@ -62,23 +62,19 @@ To do that, we can simply place a new `<source>` on top of the others which has 
 
 ### 3. Connect with JavaScript
 
-With that bit of knowledge, we can now write some code to insert an "override" source depending on which theme the user selects – for every `<picture>` on the page! To accomplish this, we must:
-
-1. Find every existing `<source>` that matches the desired colour scheme
-2. Place a duplicate of that source without its `media=""` condition
-3. Place the new source first in its `<picture>` element
+With that bit of knowledge, we can now write some code to insert an "override" source for every `<picture>` depending on which theme the user selects!
 
 First, let's set up a function that takes the desired colour scheme, 'light' or 'dark', and finds all the sources that match it:
 
 ```javascript
-function setPicturesThemed(colorScheme) {
+function setPicturesThemed(colorScheme = '') {
     document.querySelectorAll(
-        `picture > source[media="(prefers-color-scheme: ${colorScheme})"]`
+        `picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`
     );
 }
 ```
 
-This isn't as complicated as it looks! We're using an [ attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) to round up all the elements we want. `picture > source` gets all of the sources, then `[media=(prefers-color-scheme: ${colorScheme})]` narrows it down to the ones that match the function input of 'light' or 'dark'.
+This isn't as complicated as it looks! We're using an [attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) to get an array of all the sources we want to display based on the input `colorScheme`.
 
 For each of the matching sources we need to make a duplicate, remove its `media` attribute, and prepend it to the parent `<picture>` element. We'll also give it a custom data attribute for future reference. Here it goes:
 
@@ -112,7 +108,7 @@ document.querySelectorAll('picture > source[data-cloned-theme]').forEach(el => {
 
 Putting that at the beginning of our main function will also take care of cleaning everything up each time it runs.
 
-Finally, we'll get the main function to accept an empty string for the default case – which will do the removal and nothing else – and voila!
+Finally, we'll get the default case default case to do the removal and nothing else – and voila!
 
 ## Final JavaScript code
 
@@ -125,7 +121,7 @@ function setPicturesThemed(colorScheme = '') {
 
     if (colorScheme) {
         // Find all picture sources with the desired color-scheme attribute
-        document.querySelectorAll(`picture > source[media="(prefers-color-scheme: ${colorScheme})"]`).forEach(el => {
+        document.querySelectorAll(`picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`).forEach(el => {
             // 1. Clone the given <source>
             // 2. Remove the media attribute so the new <source> is unconditional
             // 3. Add a "data-cloned-theme" attribute to it for future reference / removal
@@ -141,18 +137,18 @@ function setPicturesThemed(colorScheme = '') {
 
 ## Complete Demo
 
-<iframe height="400" style="width: 100%;" scrolling="no" title="Native Dark Mode images w/ manual switch " src="https://codepen.io/michaelti/embed/ExVjMPr?height=400&theme-id=default&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Native Dark Mode images w/ manual switch " src="https://codepen.io/michaelti/embed/ExVjMPr?height=300&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
 
 ## Caveats
 
-Rudimentary as this approach is, here are a few things to note:
+This method currently doesn't account for sources with multiple media conditions, i.e. `<source media="(prefers-color-scheme: dark) and (max-width: 900px)">`. To specify sizes, you may use [srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#The_srcset_attribute) instead.
 
-- Each themed `<picture>` element must explicitly set both light and dark sources, in addition to the usual fallback image.
-- This method does not work for `<source>` elements that have additional queries in their media attribute, i.e. `<source media="(prefers-color-scheme: dark) and (max-width: 640px)">`. This can be worked around by using [the srcset attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#The_srcset_attribute) to specify sizes instead.
-- Modern browser support, see [Can I Use: DOM manipulation convenience methods](https://caniuse.com/#feat=dom-manip-convenience)
+If that's a dealbreaker, you could modify the script to do some fancy string replacement instead of removing the whole media attribute at the cloning step.
+
+For browser support, see [Can I Use: DOM manipulation convenience methods](https://caniuse.com/#feat=dom-manip-convenience). TL;DR: all the modern ones including Edge 17+. This could be expanded trivially by using ES5 syntax and a [polyfill](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend#Polyfill) for ParentNode.prepend.
 
 ## Nighthawks rejoice!
 
-In just 13 lines of JavaScript, we wrote a function to override the preferred colour scheme for all of the light and dark mode images on a given page.
+In just 13 lines of JavaScript, we wrote a function to override the preferred colour scheme for all of the native light and dark mode images on a page.
 
-You may integrate this with the manual toggle switch on your website or app so your users will always be served the right themed image, day 🌞 or night 🌚.
+Integrate this with the manual toggle switch on your website or app, and your users will always be served the right themed images – day 🌞 or night 🌚.
