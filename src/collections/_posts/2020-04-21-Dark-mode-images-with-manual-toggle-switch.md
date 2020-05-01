@@ -16,13 +16,13 @@ Using the `<picture>` element and `media` attribute, we can take things a step f
 </picture>
 ```
 
-But as [Rhys Lloyd points out](https://rhyslloyd.me/serve-dark-mode-images-natively/#inevitable-caveat "Rhys Lloyd - Serve 'dark mode' images natively"), that falls short once you've added a [user-controlled](https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode/ "Andy Bell - Create a user controlled dark or light mode") manual switch button for your themes using JavaScript, like in this example:
+But as [Rhys Lloyd points out](https://rhyslloyd.me/serve-dark-mode-images-natively/#inevitable-caveat "Rhys Lloyd - Serve 'dark mode' images natively"), that falls short once you've added a [user-controlled](https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode/ "Andy Bell - Create a user controlled dark or light mode") switcher for your themes using JavaScript, like in this example:
 
 <iframe class="iframe-demo" height="48" scrolling="no" title="Light/dark colour theme switcher example" src="/assets/iframe-demos/theme-switch-button.html" frameborder="no" loading="lazy"></iframe>
 
 The image doesn't change! That's because the `prefers-color-scheme` query doesn't know about our bespoke theme switching implementation. Nor can we use CSS to manipulate the `<source>` elements in any meaningful way.
 
-We will address that inconvenience with a little extra JavaScript spice! 🌶
+With a little extra JavaScript, we'll dynamically switch between light and dark sources and override the system setting – without changing any of our markup.
 
 
 ## Tl;dr complete demo
@@ -30,12 +30,7 @@ We will address that inconvenience with a little extra JavaScript spice! 🌶
 <iframe class="iframe-demo" height="300" scrolling="no" title="Native Dark Mode images w/ manual switch (Complete)" src="https://codepen.io/michaelti/embed/ExVjMPr?height=300&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
 
 
-## The solution
-
-Let's connect our `<picture>` elements that have light and dark sources to a script that can manually switch between them and override the system setting. And let's do it without changing any of our existing markup from above.
-
-
-## How Does it Work?
+## How does it work?
 
 ### 1. The picture element
 
@@ -106,19 +101,19 @@ document.querySelectorAll('picture > source[data-cloned-theme]').forEach(el => {
 
 Putting that at the beginning of our main function will also take care of cleaning everything up each time it runs.
 
-Finally, we'll use the default case of `colorScheme = ''` to do that removal and nothing else – and voila!
+Finally, we'll use the default value of `colorScheme = ''` to do that removal and nothing else – and voila!
 
-## Final JavaScript code
+## Complete code and demo
 
 ```javascript
 function setPicturesThemed(colorScheme = '') {
-    // Clean up all existing picture sources with a "data-cloned-theme" attribute
+    // Clean up all existing picture sources that were cloned
     document.querySelectorAll('picture > source[data-cloned-theme]').forEach(el => {
         el.remove();
     });
 
     if (colorScheme) {
-        // Find all picture sources with the desired color-scheme attribute
+        // Find all picture sources with the desired colour scheme
         document.querySelectorAll(`picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`).forEach(el => {
             // 1. Clone the given <source>
             // 2. Remove the media attribute so the new <source> is unconditional
@@ -133,20 +128,18 @@ function setPicturesThemed(colorScheme = '') {
 }
 ```
 
-## Final Complete Demo
-
 <iframe class="iframe-demo" height="300" scrolling="no" title="Native Dark Mode images w/ manual switch (Complete)" src="https://codepen.io/michaelti/embed/ExVjMPr?height=300&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
 
 ## Caveats
 
-This method currently doesn't account for sources with multiple media conditions, i.e. `<source media="(prefers-color-scheme: dark) and (max-width: 900px)">`. To specify sizes, you may use [srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#The_srcset_attribute "MDN - The picture element") instead.
+This method doesn't currently account for sources with multiple media conditions, i.e. `<source media="(prefers-color-scheme: dark) and (max-width: 900px)">`. To specify sizes, you may use [srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#The_srcset_attribute "MDN - The picture element") instead.
 
-If that's a dealbreaker, you could amend the script to do some fancy string replacement instead of removing the whole media attribute at the cloning step.
+If that's a dealbreaker, you could amend the script to do some fancy string replacement instead of removing the whole `media` attribute at the cloning step.
 
-For browser support, see [Can I use: DOM manipulation convenience methods](https://caniuse.com/#feat=dom-manip-convenience). TL;DR: all the modern ones including Edge 17+. This could be expanded trivially by using ES5 syntax and a [polyfill](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend#Polyfill "MDN - ParentNode.prepend()") for ParentNode.prepend().
+As for [browser support](https://caniuse.com/#feat=dom-manip-convenience "Can I use: DOM manipulation convenience methods"): all the modern ones including Edge 17+. This could be expanded lots by using ES5 syntax and a [polyfill](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend#Polyfill "MDN - ParentNode.prepend()") for ParentNode.prepend().
 
 ## Nighthawks rejoice!
 
-In just 13 lines of JavaScript, we wrote a function to override the preferred colour scheme for all of the native light and dark mode images on a page.
+In just 13 lines of JavaScript, we wrote a function to override the preferred colour scheme for all of the native automatic light and dark mode images on a page.
 
-Integrate this with the manual toggle switch on your website or app, and your users will always be served the right themed images – day 🌞 or night 🌚.
+Integrate this with the manual toggle switch on your website or app, and your users will always be served the right themed images – day 🌞 and night 🌚.
