@@ -136,10 +136,10 @@ This method doesn't currently account for sources with multiple media conditions
 
 If that's a dealbreaker, you could amend the script to do some fancy string replacement instead of removing the whole `media` attribute at the cloning step.
 
-As for [browser support](https://caniuse.com/#feat=dom-manip-convenience "Can I use: DOM manipulation convenience methods"): all the modern ones including Edge 17+. This could be expanded lots by using ES5 syntax and a [polyfill](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend#Polyfill "MDN - ParentNode.prepend()") for ParentNode.prepend().
+As for [browser support](https://caniuse.com/#feat=dom-manip-convenience "Can I use: DOM manipulation convenience methods"): tl;dr all the modern ones including Edge 17+. This could be expanded lots by using ES5 syntax and a [polyfill](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend#Polyfill "MDN - ParentNode.prepend()") for ParentNode.prepend().
 
-## Nighthawks rejoice!
+## Night owls rejoice! 🦉
 
 In just 13 lines of JavaScript, we wrote a function to override the preferred colour scheme for all of the native automatic light and dark mode images on a page.
 
-Integrate this with the manual toggle switch on your website or app, and your users will always be served the right themed images – day 🌞 and night 🌚.
+Integrate this with the manual switcher on your website or app to always serve the right themed images – day 🌞 and night 🌚.
