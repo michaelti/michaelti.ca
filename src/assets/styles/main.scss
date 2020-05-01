@@ -3,6 +3,7 @@
 
 // Vendor-provided dependencies
 @import 'vendor/normalize';
+@import 'vendor/pygments-themes';
 
 // @font-face rules for custom fonts
 @import 'custom-fonts';
@@ -22,7 +23,9 @@
 @import 'sections/portfolio-grid';
 @import 'sections/post-navigation';
 @import 'sections/page-header';
+@import 'sections/sandbox-articles';
 
 // Authored page-specific partials
 @import 'pages/home';
-@import 'pages/post';
+@import 'pages/portfolio-content';
+@import 'pages/post-content';

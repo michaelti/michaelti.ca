@@ -26,13 +26,14 @@ defaults:
             path: ""
             type: "portfolio"
         values:
-            layout: "post"
+            layout: "portfolio"
     -
         scope:
             path: ""
             type: "posts"
         values:
             layout: "post"
+            excerpt_separator: "<!-- excerpt -->"
 
 # Sass options
 sass:

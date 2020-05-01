@@ -4,35 +4,21 @@ title: Sandbox
 permalink: /sandbox/
 ---
 
-<p>
-    Welcome to my playground for everything <em>else</em>.
-    There are no posts in the sandbox yet!
-    In the meantime, here's the type of thing I will be showcasing. 
-</p>
-
-<p>
-    Up first, a piano video that I produced with an extremely talented friend...
-    <br><br>
-</p>
-
-<div class="responsive-ratio responsive-ratio-2by1">
-    <iframe src="https://www.youtube.com/embed/Rt9wptpuilY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="sandbox-articles">
+    {% for item in site.posts %}
+        <article>
+            <header>
+                <h1>
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+                </h1>
+            </header>
+            {{ item.excerpt }}
+            <footer>
+                <a href="{{ item.url }}">Read more &rarr;</a>
+                <time datetime="{{item.date}}">
+                    Published {{ item.date | date: '%B %d, %Y' }}
+                </time>
+            </footer>
+        </article>
+    {% endfor %}
 </div>
-
-<p>
-    <br>
-    Stay tuned!
-</p>
-
-{% for item in site.posts %}
-    <article>
-        <header>
-            <h2>
-                <a href="{{ item.url }}">
-                    {{ item.title }}
-                </a>
-            </h2>
-        </header>
-        {{ item.excerpt }}
-    </article>
-{% endfor %}

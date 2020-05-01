@@ -6,13 +6,18 @@ $breakpoint-large: 480px;
 // Typography
 $font-family-body: 'Roboto Slab', serif;
 $font-family-heading: 'Muli', sans-serif;
+$font-family-code: 'Courier', monospace;
 $font-weight-body: 400;
 $font-weight-heading: 700;
+$font-weight-code: 400;
 
 // Shadows
 $box-shadow-card:
     0 4px 16px -4px rgba(0, 0, 0, 0.10),
     0 1px 4px -1px rgba(0, 0, 0, 0.05);
+$box-shadow-well:
+    0 2px 16px -4px rgba(0, 0, 0, 0.10) inset,
+    0 0px 4px -1px rgba(0, 0, 0, 0.05) inset;
 
 // Border radius
 $border-radius-card: 2px;

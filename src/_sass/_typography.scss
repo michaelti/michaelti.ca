@@ -21,3 +21,46 @@ p, ol, ul {
 a {
     color: var(--color-link);
 }
+
+// Code
+code {
+    font-family: $font-family-code;
+    font-weight: $font-weight-code;
+}
+
+// Code - inline
+code.highlighter-rouge {
+    padding: 0.125em 0.375em;
+    background-color: var(--color-background-card);
+    border-radius: $border-radius-card;
+    box-shadow: 0 0 0 1px var(--color-border) inset;
+}
+
+// Code - blocks
+div.highlighter-rouge {
+    margin-top: $layout-spacing * 2;
+    margin-bottom: $layout-spacing * 2;
+}
+
+div.highlighter-rouge pre {
+    padding: $layout-spacing;
+    background-color: var(--color-background-well);
+    border-radius: $border-radius-card;
+    box-shadow: $box-shadow-well;
+    overflow-x: scroll;
+}
+
+// Code - syntax highlighting
+.highlight {
+    @include pygments-base16-onelight;
+}
+
+:root[data-user-theme="dark"] .highlight {
+    @include pygments-base16-onedark;
+}
+
+:root:not([data-user-theme]) {
+    @media (prefers-color-scheme: dark) {
+        @include pygments-base16-onedark;
+    }
+}
