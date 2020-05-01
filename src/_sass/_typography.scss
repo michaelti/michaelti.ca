@@ -37,6 +37,11 @@ code.highlighter-rouge {
 }
 
 // Code - blocks
+div.highlighter-rouge {
+    margin-top: $layout-spacing * 2;
+    margin-bottom: $layout-spacing * 2;
+}
+
 div.highlighter-rouge pre {
     padding: $layout-spacing;
     background-color: var(--color-background-well);
