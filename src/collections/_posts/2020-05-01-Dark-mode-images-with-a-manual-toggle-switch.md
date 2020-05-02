@@ -101,7 +101,7 @@ document.querySelectorAll('picture > source[data-cloned-theme]').forEach(el => {
 
 Putting that at the beginning of our main function will also take care of cleaning everything up each time it runs.
 
-Finally, we'll use the default value of `colorScheme = undefined` (or null) to do that removal and nothing else – and voila!
+Finally, we'll use the default value of `colorScheme = undefined` (or null) to do that removal and nothing else – and voilà!
 
 ## Complete code and demo
 
