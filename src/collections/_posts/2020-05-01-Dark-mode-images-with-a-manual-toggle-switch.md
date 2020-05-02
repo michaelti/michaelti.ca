@@ -60,7 +60,7 @@ With that bit of knowledge, we can now write some code to insert the "override" 
 First, let's set up a function that takes the desired colour scheme, 'light' or 'dark', and finds all the sources that match it:
 
 ```javascript
-function setPicturesThemed(colorScheme = '') {
+function setPicturesThemed(colorScheme = undefined) {
     document.querySelectorAll(
         `picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`
     );
@@ -101,12 +101,12 @@ document.querySelectorAll('picture > source[data-cloned-theme]').forEach(el => {
 
 Putting that at the beginning of our main function will also take care of cleaning everything up each time it runs.
 
-Finally, we'll use the default value of `colorScheme = ''` to do that removal and nothing else – and voila!
+Finally, we'll use the default value of `colorScheme = undefined` (or null) to do that removal and nothing else – and voila!
 
 ## Complete code and demo
 
 ```javascript
-function setPicturesThemed(colorScheme = '') {
+function setPicturesThemed(colorScheme = undefined) {
     // Clean up all existing picture sources that were cloned
     document.querySelectorAll('picture > source[data-cloned-theme]').forEach(el => {
         el.remove();
@@ -134,12 +134,12 @@ function setPicturesThemed(colorScheme = '') {
 
 This method doesn't currently account for sources with multiple media conditions, i.e. `<source media="(prefers-color-scheme: dark) and (max-width: 900px)">`. To specify sizes, you may use [srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#The_srcset_attribute "MDN - The picture element") instead.
 
-If that's a dealbreaker, you could amend the script to do some fancy string replacement instead of removing the whole `media` attribute at the cloning step.
+If that's a deal-breaker, you could amend the script to do some fancy string replacement instead of removing the whole `media` attribute at the cloning step.
 
 As for [browser support](https://caniuse.com/#feat=dom-manip-convenience "Can I use: DOM manipulation convenience methods"): tl;dr all the modern ones including Edge 17+. This could be expanded lots by using ES5 syntax and a [polyfill](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend#Polyfill "MDN - ParentNode.prepend()") for ParentNode.prepend().
 
 ## Night owls rejoice! 🦉
 
-In just 13 lines of JavaScript, we wrote a function to override the preferred colour scheme for all of the native automatic light and dark mode images on a page.
+In just 13 lines of JavaScript, we wrote a function to override the preferred colour scheme for all of the native automatic light and dark mode pictures on a page.
 
-Integrate this with the manual switcher on your website or app to always serve the right themed images – day 🌞 and night 🌚.
+Integrate this with the manual theme switcher on your website or app to always serve the right images – day 🌞 and night 🌚.
