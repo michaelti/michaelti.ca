@@ -1,9 +1,22 @@
 // Global footer
 body > footer {
-    padding-top: $layout-spacing * 2;
+    padding-top: $layout-spacing * 3;
     padding-bottom: $layout-spacing * 4;
     background-color: var(--color-background-well);
     border-top: 1px solid var(--color-border);
+
+    .footer-inner {
+        display: flex;
+        align-items: center;
+
+        > section:not(:last-child) {
+            margin-right: $layout-spacing;
+        }
+
+        > section:last-child {
+            margin-left: auto;
+        }
+    }
 }
 
 // Theme switcher button
