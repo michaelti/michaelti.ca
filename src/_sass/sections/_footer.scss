@@ -3,6 +3,7 @@ body > footer {
     padding-top: $layout-spacing * 3;
     padding-bottom: $layout-spacing * 4;
     background-color: var(--color-background-well);
+    background-image: var(--texture-background-well);
     border-top: 1px solid var(--color-border);
 
     .footer-inner {
