@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Apply medium zoom effect to images in post content
+    // Apply medium zoom effect to images in portfolio content
     (function() {
-        mediumZoom('.post-content img', {
-            margin: 15,
-            background: 'var(--color-overlay)',
+        mediumZoom('.portfolio-content img, .post-content img', {
+            margin: 0,
+            background: 'var(--color-background)',
             scrollOffset: 0
         });
     })();

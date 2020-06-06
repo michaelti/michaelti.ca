@@ -3,7 +3,19 @@ layout: page
 ---
 
 <div class="post-content">
+    <address class="post-address">
+        Michael Ti Dismatsek &bull; 
+        <time datetime="{{page.date}}">
+            Published {{ page.date | date: '%B %e, %Y' }}
+        </time>
+    </address>
+
     {{ content }}
 </div>
 
-{% include post-navigation.html %}
+<nav class="post-navigation">
+    <a href="/sandbox">
+        &larr; Back to Sandbox
+        <br>&nbsp;
+    </a>
+</nav>

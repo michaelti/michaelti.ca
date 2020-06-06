@@ -1,0 +1,27 @@
+// Responsive images and videos in post content
+.post-content img,
+.post-content video,
+.post-content .post-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: $layout-spacing * 2;
+    margin-bottom: $layout-spacing * 2;
+    @include card;
+}
+
+// Responsive iframe demos in post content
+.post-content .iframe-demo {
+    display: block;
+    width: 100%;
+    margin-top: $layout-spacing * 2;
+    margin-bottom: $layout-spacing * 2;
+    @include card;
+}
+
+// Author and publication address in post content
+.post-content address.post-address {
+    font-style: normal;
+    margin-top: $layout-spacing * 2;
+    margin-bottom: $layout-spacing * 2;
+}

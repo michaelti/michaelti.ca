@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://michaelti.ca/assets/images/og-logo-michaelti.png">
     <title>{{ site.title }} | {{ page.title }}</title>
     <link rel="shortcut icon" href="/assets/images/favicon.ico">
     <link rel="stylesheet" href="/assets/styles/main.css">
     <script src="/assets/scripts/medium-zoom.min.js" defer></script>
     <script src="/assets/scripts/theme-switcher.js" defer></script>
+    <script src="/assets/scripts/unsupported-browser.js" defer></script>
     <script src="/assets/scripts/main.js"></script>
     {% include analytics.html %}
     <!-- Generated: {{ site.time }} -->
@@ -16,5 +18,5 @@
     {% include header.html %}
     {{ content }}
     {% include footer.html %}
-</body>
+    </body>
 </html>

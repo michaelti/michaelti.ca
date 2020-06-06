@@ -6,6 +6,9 @@ destination: ./build
 livereload: true
 host: 0.0.0.0
 
+# Build options
+future: true
+
 # Custom options
 title: michaelti.ca
 
@@ -17,7 +20,7 @@ collections:
         permalink: /portfolio/:name/
         sort_by: order
     posts:
-        permalink: /sandbox/:year/:month/:day/:title/
+        permalink: /sandbox/:year/:month/:day/:slug/
 
 # Front matter defailts
 defaults:
@@ -26,13 +29,14 @@ defaults:
             path: ""
             type: "portfolio"
         values:
-            layout: "post"
+            layout: "portfolio"
     -
         scope:
             path: ""
             type: "posts"
         values:
             layout: "post"
+            excerpt_separator: "<!-- excerpt -->"
 
 # Sass options
 sass:

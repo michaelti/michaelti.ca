@@ -1,0 +1,10 @@
+// Responsive images and videos in portfolio content
+.portfolio-content img,
+.portfolio-content video {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: $layout-spacing * 2;
+    margin-bottom: $layout-spacing * 2;
+    @include card;
+}
