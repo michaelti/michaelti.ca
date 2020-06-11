@@ -28,7 +28,7 @@ Visit web app: <a href="https://app.weown.ca" target="_blank" rel="noreferrer">h
     display: grid;
     grid-auto-rows: auto;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 15px;
+    grid-column-gap: 0.9375rem;
 ">
 
     <img src="/assets/images/portfolio/weown-4.png" alt="Mobile view of survey questions for user home preferences with sliders for each answer">

@@ -1,7 +1,7 @@
 // Layout
-$layout-spacing: 15px;
-$container-width: 640px;
-$breakpoint-large: 480px;
+$layout-spacing: 0.9375rem; // 15px @ typical 16px base font size
+$container-width: 40rem; // 640px
+$breakpoint-large: 30rem; // 480px
 
 // Typography
 $font-family-body: 'Roboto Slab', serif;
