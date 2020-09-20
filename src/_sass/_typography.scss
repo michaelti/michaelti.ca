@@ -40,14 +40,27 @@ code.highlighter-rouge {
 div.highlighter-rouge {
     margin-top: $layout-spacing * 2;
     margin-bottom: $layout-spacing * 2;
+    // Full-width bleed util:
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 div.highlighter-rouge pre {
-    padding: $layout-spacing;
+    padding: $layout-spacing 0;
     background-color: var(--color-background-well);
     border-radius: $border-radius-card;
     box-shadow: $box-shadow-well;
     overflow-x: scroll;
+
+    > code {
+        display: block;
+        max-width: $container-width;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: $layout-spacing;
+        padding-right: $layout-spacing;
+    }
 }
 
 // Code - syntax highlighting
