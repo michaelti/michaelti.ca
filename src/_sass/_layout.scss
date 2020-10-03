@@ -1,6 +1,6 @@
 // Reset box-sizing
 html { box-sizing: border-box; }
-*, *:before, *:after { box-sizing: inherit; }
+*, *::before, *::after { box-sizing: inherit; }
 
 // Global website layout
 body {
@@ -8,6 +8,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-color: var(--color-background);
+    overflow-x: hidden;
 
     > main {
         flex-grow: 1;
