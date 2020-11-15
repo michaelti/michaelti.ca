@@ -47,7 +47,7 @@ div.highlighter-rouge {
 }
 
 div.highlighter-rouge pre {
-    padding: $layout-spacing 0;
+    padding: $layout-spacing * 2 0;
     background-color: var(--color-background-well);
     border-radius: $border-radius-card;
     box-shadow: $box-shadow-well;
