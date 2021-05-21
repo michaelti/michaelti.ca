@@ -4,20 +4,16 @@ $container-width: 40rem; // 640px
 $breakpoint-large: 30rem; // 480px
 
 // Typography
-$font-family-body: 'Roboto Slab', serif;
-$font-family-heading: 'Muli', sans-serif;
-$font-family-code: 'Courier', monospace;
+$font-family-body: "Roboto Slab", serif;
+$font-family-heading: "Muli", sans-serif;
+$font-family-code: "Courier", monospace;
 $font-weight-body: 400;
 $font-weight-heading: 700;
 $font-weight-code: 400;
 
 // Shadows
-$box-shadow-card:
-    0 4px 16px -4px rgba(0, 0, 0, 0.10),
-    0 1px 4px -1px rgba(0, 0, 0, 0.05);
-$box-shadow-well:
-    0 2px 16px -4px rgba(0, 0, 0, 0.10) inset,
-    0 0px 4px -1px rgba(0, 0, 0, 0.05) inset;
+$box-shadow-card: 0 4px 16px -4px rgba(0, 0, 0, 0.1), 0 1px 4px -1px rgba(0, 0, 0, 0.05);
+$box-shadow-well: 0 2px 16px -4px rgba(0, 0, 0, 0.1) inset, 0 0px 4px -1px rgba(0, 0, 0, 0.05) inset;
 
 // Border radius
 $border-radius-card: 2px;
@@ -30,20 +26,20 @@ $border-radius-card: 2px;
     --color-background-well: #f0f0f0;
     --color-background-well-deep: #d7d7d7;
     --color-text: #272727;
-    --color-link: #0077ba;
+    --color-link: var(--color-brand);
     --color-border: rgba(0, 0, 0, 0.15);
-    --texture-background-well: url('/assets/images/bg-texture-light.png');
+    --texture-background-well: url("/assets/images/bg-texture-light.png");
 }
 @mixin colors-theme-dark {
-    --color-brand: #0077ba;
+    --color-brand: #3ebaff;
     --color-background: #37393e;
     --color-background-card: #40444b;
     --color-background-well: #2f3136;
     --color-background-well-deep: #202225;
     --color-text: #f7f7f7;
-    --color-link: #12aaff;
+    --color-link: var(--color-brand);
     --color-border: rgba(255, 255, 255, 0.15);
-    --texture-background-well: url('/assets/images/bg-texture-dark.png');
+    --texture-background-well: url("/assets/images/bg-texture-dark.png");
 }
 
 // CSS custom properties (variables)

@@ -9,7 +9,7 @@
     > ul {
         @include unstyled-list;
         display: flex;
-        
+
         > li {
             > a {
                 display: inline-block;
@@ -26,15 +26,17 @@
     > *:not(:last-child) {
         margin-right: $layout-spacing;
     }
-    
+
     > ul.nav-primary {
         flex-grow: 1;
     }
 
-    > a.nav-brand img {
+    > a.nav-brand svg {
         display: block;
         height: 1.5em;
         width: 1.5em;
         border-radius: 2px;
+        background-color: var(--color-brand);
+        fill: var(--color-background);
     }
 }
