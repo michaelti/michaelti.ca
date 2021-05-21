@@ -10,8 +10,8 @@ Using the `<picture>` element and `media` attribute, we can take things a step f
 
 ```html
 <picture>
-    <source media="(prefers-color-scheme: light)" srcset="light version">
-    <source media="(prefers-color-scheme: dark)" srcset="dark version">
+    <source media="(prefers-color-scheme: light)" srcset="light version" />
+    <source media="(prefers-color-scheme: dark)" srcset="dark version" />
     <img src="light version fallback" alt="" />
 </picture>
 ```
@@ -24,11 +24,9 @@ The image doesn't change! That's because the `prefers-color-scheme` query doesn'
 
 With a little extra JavaScript, we'll dynamically switch between light and dark sources and override the system setting – without changing any of our markup.
 
-
 ## Tl;dr complete demo
 
 <iframe class="iframe-demo" height="300" scrolling="no" title="Native Dark Mode images w/ manual switch (Complete)" src="https://codepen.io/michaelti/embed/ExVjMPr?height=300&theme-id=default&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
-
 
 ## How does it work?
 
@@ -37,20 +35,20 @@ With a little extra JavaScript, we'll dynamically switch between light and dark 
 The HTML5 `<picture>` element works by loading the first `<source>` whose conditions are met. For example, given two sources ...
 
 ```html
-<source media="(prefers-color-scheme: light)" srcset="light version">
-<source media="(prefers-color-scheme: dark)" srcset="dark version">
+<source media="(prefers-color-scheme: light)" srcset="light version" />
+<source media="(prefers-color-scheme: dark)" srcset="dark version" />
 ```
 
 ... when the system colour scheme is light, it only loads the first source. If the system setting is dark, it skips the first source and loads the second one.
 
-That's nice on its own, but we need a way to supersede both of these conditions in order to  display the image for a *user-controlled* colour preference.
+That's nice on its own, but we need a way to supersede both of these conditions in order to display the image for a _user-controlled_ colour preference.
 
-To override them, we could simply place a new `<source>` on top of the others which has *no* media condition. It will always take precedence:
+To override them, we could simply place a new `<source>` on top of the others which has _no_ media condition. It will always take precedence:
 
 ```html
-<source srcset="override version">
-<source media="(prefers-color-scheme: light)" srcset="light version">
-<source media="(prefers-color-scheme: dark)" srcset="dark version">
+<source srcset="override version" />
+<source media="(prefers-color-scheme: light)" srcset="light version" />
+<source media="(prefers-color-scheme: dark)" srcset="dark version" />
 ```
 
 ### 2. Connect with JavaScript
@@ -60,10 +58,8 @@ With that bit of knowledge, we can now write some code to insert the "override" 
 First, let's set up a function that takes the desired colour scheme, 'light' or 'dark', and finds all the sources that match it:
 
 ```javascript
-function setPicturesThemed(colorScheme = undefined) {
-    document.querySelectorAll(
-        `picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`
-    );
+function setPicturesThemed(colorScheme) {
+    document.querySelectorAll(`picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`);
 }
 ```
 
@@ -88,13 +84,13 @@ Perfect! Let's check out what we have so far by adding a couple of buttons:
 
 Two things are missing:
 
-- The ability to switch back to the default system colour scheme
-- Cleaning up the cloned sources. Right now the `<picture>` gets filled up with repeated elements every time the function is called.
+-   The ability to switch back to the default system colour scheme
+-   Cleaning up the cloned sources. Right now the `<picture>` gets filled up with repeated elements every time the function is called.
 
 To switch back to the default colour scheme, we just need to remove all of the `<source>` elements that we created. That's where the `data-cloned-theme` attribute we gave them comes in handy:
 
 ```javascript
-document.querySelectorAll('picture > source[data-cloned-theme]').forEach(el => {
+document.querySelectorAll("picture > source[data-cloned-theme]").forEach((el) => {
     el.remove();
 });
 ```
@@ -106,24 +102,26 @@ Finally, we'll use the default value of `colorScheme = undefined` (or null) to d
 ## Complete code and demo
 
 ```javascript
-function setPicturesThemed(colorScheme = undefined) {
+function setPicturesThemed(colorScheme) {
     // Clean up all existing picture sources that were cloned
-    document.querySelectorAll('picture > source[data-cloned-theme]').forEach(el => {
+    document.querySelectorAll("picture > source[data-cloned-theme]").forEach((el) => {
         el.remove();
     });
 
     if (colorScheme) {
         // Find all picture sources with the desired colour scheme
-        document.querySelectorAll(`picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`).forEach(el => {
-            // 1. Clone the given <source>
-            // 2. Remove the media attribute so the new <source> is unconditional
-            // 3. Add a "data-cloned-theme" attribute to it for future reference / removal
-            // 4. Prepend the new <source> to the parent <picture> so it takes precedence
-            const cloned = el.cloneNode();
-            cloned.removeAttribute('media');
-            cloned.setAttribute('data-cloned-theme', colorScheme);
-            el.parentNode.prepend(cloned);
-        });
+        document
+            .querySelectorAll(`picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`)
+            .forEach((el) => {
+                // 1. Clone the given <source>
+                // 2. Remove the media attribute so the new <source> is unconditional
+                // 3. Add a "data-cloned-theme" attribute to it for future reference / removal
+                // 4. Prepend the new <source> to the parent <picture> so it takes precedence
+                const cloned = el.cloneNode();
+                cloned.removeAttribute("media");
+                cloned.setAttribute("data-cloned-theme", colorScheme);
+                el.parentNode.prepend(cloned);
+            });
     }
 }
 ```
