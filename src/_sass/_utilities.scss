@@ -24,8 +24,8 @@
 
     &-1by1::before  { padding-bottom: 100%; }
     &-2by1::before  { padding-bottom: 50%; }
-    &-16by9::before { padding-bottom: (9 / 16) * 100%; }
-    &-21by9::before { padding-bottom: (9 / 21) * 100%; }
+    &-16by9::before { padding-bottom: calc(9 / 16) * 100%; }
+    &-21by9::before { padding-bottom: calc(9 / 21) * 100%; }
 }
 
 // Inline SVG icon styles for Font Awesome icons. Very basic for now.
