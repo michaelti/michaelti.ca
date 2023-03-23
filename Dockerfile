@@ -1,4 +1,4 @@
-FROM ruby:2-alpine AS build
+FROM ruby:2.6.5-alpine AS build
 WORKDIR /app
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
