@@ -5,9 +5,11 @@ thumbnail: /assets/images/portfolio/thumbnails/3d-project-hub.svg
 order: 4
 ---
 
-The FCAD Project Hub was an ongoing project at Ryerson University. The purpose of the site is to provide a platform for students and faculty across the school to share 3D creations, teach and learn about 3D resources, and upload 3D files for easy printing at campus fabrication labs.
+The FCAD Project Hub was a prototype platform for students and faculty at Toronto Metropolitan University to share 3D creations, resources, and upload files for printing at campus fabrication labs.
 
-Over several months, I collaborated with a lead developer and lab technicians to create this platform from the ground up using Drupal 8. I was responsible for front-end design and development, back-end workflow support, and weekly progress check-ins until we presented the site to intended clients at the annual Ryerson IT Conference in 2018.
+I worked with a lead developer and lab technicians to create this space using Drupal 8. My role spanned front-end design and development, workflow support, and weekly progress check-ins.
+
+The project was presented at the university's annual IT Conference in 2018.
 
 <video autoplay muted loop playsinline>
     <source src="/assets/videos/3d-project-hub-demo.mp4" type="video/mp4">

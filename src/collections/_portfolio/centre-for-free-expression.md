@@ -5,11 +5,13 @@ thumbnail: /assets/images/portfolio/thumbnails/centre-for-free-expression.svg
 order: 5
 ---
 
-The main website for the Centre for Free Expression is one of the most substantial projects that I led while working at Ryerson University. Beginning in 2016, I worked directly with the client as the lead developer for the site. Initially collaborating with a designer, we created and implemented the original design as a custom Bootstrap sub-theme in Drupal, leaving room for extension.
+The Centre for Free Expression is a hub at Toronto Metropolitan University focused on public education and advocacy.
 
-The website has grown and evolved with the organization since it first launched, and is now fully featured with plenty of content structures, taxonomies, and ways to discover information. I have continued maintaining and building these new features on a freelance basis.
+Beginning in 2016, I worked directly with the client as lead developer for the site paired with a designer. We built this first platform in Drupal with an emphasis on future growth.
 
-Visit website: <a href="https://cfe.ryerson.ca" target="_blank" rel="noreferrer">https://cfe.ryerson.ca</a>
+The site evolved with the Centre, featuring new content structures, taxonomies, and ways to explore information. In 2022, we launched a refresh to meet these needs even better.
+
+<a href="https://cfe.torontomu.ca" target="_blank" rel="noreferrer">https://cfe.torontomu.ca</a>
 
 <video autoplay muted loop playsinline>
     <source src="/assets/videos/centre-for-free-expression-demo.mp4" type="video/mp4">
@@ -17,4 +19,4 @@ Visit website: <a href="https://cfe.ryerson.ca" target="_blank" rel="noreferrer"
 
 ## Screenshots
 
-![Home page showing a large hero image, welcome text, navigational links, and latest news](/assets/images/portfolio/centre-for-free-expression-1.png)
+![Home page showing a large hero section, welcome text, navigational links, and latest news](/assets/images/portfolio/centre-for-free-expression-2.png)

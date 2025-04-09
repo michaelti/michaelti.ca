@@ -5,15 +5,13 @@ thumbnail: /assets/images/portfolio/thumbnails/red-book.svg
 order: 2
 ---
 
-The Red Book is a curated database of community resources serving the city of Hamilton. Users and province-wide partners search the website to find over 4,500 records of helpful information about things like meals, housing, recreation, and much more.
+The Red Book is a database of community resources serving the city of Hamilton. Residents and partners search the website for over 4,500 records of information about meals, housing, recreation and more.
 
-When I joined the team at Hamilton Public Library, we had taken over a legacy system built in part with Drupal. My main projects were to:
+I joined the team at Hamilton Public Library to help take over a legacy system built partly in Drupal. My focuses were:
 
-1. Upgrade the existing website with an overhauled UI and search
-2. Improve the back-end UX for easier maintenance by staff where possible
-3. Research and design a brand-new platform for the Red Book with awesome usability, automation, and browsable data relationships.
-
-Over six months we designed, developed, and launched a revamped Red Book experience – fresh, accessible, and consistent with the library's brand – all while planning the next generation of the platform.
+1. Overhaul the existing site's UI and search
+2. Improve the content management experience for staff
+3. Design a brand-new platform with better usability, automation, and browsable data relations
 
 Visit website: <a href="https://redbook.hpl.ca" target="_blank" rel="noreferrer">https://redbook.hpl.ca</a>
 
