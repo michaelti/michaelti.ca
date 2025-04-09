@@ -13,7 +13,7 @@ I joined the team at Hamilton Public Library to help take over a legacy system b
 2. Improve the content management experience for staff
 3. Design a brand-new platform with better usability, automation, and browsable data relations
 
-Visit website: <a href="https://redbook.hpl.ca" target="_blank" rel="noreferrer">https://redbook.hpl.ca</a>
+<a href="https://redbook.hpl.ca" target="_blank" rel="noreferrer">https://redbook.hpl.ca</a>
 
 <video autoplay muted loop playsinline>
     <source src="/assets/videos/red-book-demo.mp4" type="video/mp4">
