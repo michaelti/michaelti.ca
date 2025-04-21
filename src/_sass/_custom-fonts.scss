@@ -2,20 +2,30 @@
 
 // Muli, 700, latin
 @font-face {
-    font-family: 'Muli';
+    font-family: "Muli";
     font-style: normal;
     font-weight: 700;
-    src: local(''),
-        url('/assets/fonts/muli-v20-latin-700.woff2') format('woff2'),
-        url('/assets/fonts/muli-v20-latin-700.woff') format('woff');
+    src: local(""),
+        url("/assets/fonts/muli-v20-latin-700.woff2") format("woff2"),
+        url("/assets/fonts/muli-v20-latin-700.woff") format("woff");
 }
 
 // Roboto Slab, 400, latin
 @font-face {
-    font-family: 'Roboto Slab';
+    font-family: "Roboto Slab";
     font-style: normal;
     font-weight: 400;
-    src: local(''),
-        url('/assets/fonts/roboto-slab-v11-latin-regular.woff2') format('woff2'),
-        url('/assets/fonts/roboto-slab-v11-latin-regular.woff') format('woff');
+    src: local(""),
+        url("/assets/fonts/roboto-slab-v11-latin-regular.woff2") format("woff2"),
+        url("/assets/fonts/roboto-slab-v11-latin-regular.woff") format("woff");
+}
+
+// Roboto Mono, 400
+@font-face {
+    font-family: "Roboto Mono";
+    font-style: normal;
+    font-weight: 400;
+    src: local(""),
+        url("/assets/fonts/roboto-mono-regular.woff2") format("woff2"),
+        url("/assets/fonts/roboto-mono-regular.woff") format("woff");
 }

@@ -114,23 +114,23 @@ function setPicturesThemed(colorScheme) {
             el.remove();
         });
 
-    if (colorScheme) {
-        // Find all picture sources with the desired colour scheme
-        document
-            .querySelectorAll(
-                `picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`
-            )
-            .forEach((el) => {
-                // 1. Clone the given <source>
-                // 2. Remove the media attribute so the new <source> is unconditional
-                // 3. Add a "data-cloned-theme" attribute to it for future reference / removal
-                // 4. Prepend the new <source> to the parent <picture> so it takes precedence
-                const cloned = el.cloneNode();
-                cloned.removeAttribute("media");
-                cloned.setAttribute("data-cloned-theme", colorScheme);
-                el.parentNode.prepend(cloned);
-            });
-    }
+    if (!colorScheme) return;
+
+    // Find all picture sources with the desired colour scheme
+    document
+        .querySelectorAll(
+            `picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`
+        )
+        .forEach((el) => {
+            // 1. Clone the given <source>
+            // 2. Remove the media attribute so the new <source> is unconditional
+            // 3. Add a "data-cloned-theme" attribute to it for future reference / removal
+            // 4. Prepend the new <source> to the parent <picture> so it takes precedence
+            const cloned = el.cloneNode();
+            cloned.removeAttribute("media");
+            cloned.setAttribute("data-cloned-theme", colorScheme);
+            el.parentNode.prepend(cloned);
+        });
 }
 ```
 
@@ -138,14 +138,14 @@ function setPicturesThemed(colorScheme) {
 
 ## Caveats
 
-This method doesn't currently account for sources with multiple media conditions, i.e. `<source media="(prefers-color-scheme: dark) and (max-width: 900px)">`. To specify sizes, you may use [srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#The_srcset_attribute "MDN - The picture element") instead.
+This method doesn't account for sources with multiple media conditions, i.e. `<source media="(prefers-color-scheme: dark) and (max-width: 900px)">`. To specify sizes, you may use [srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#The_srcset_attribute "MDN - The picture element") instead.
 
 If that's a deal-breaker, you could amend the script to do some fancy string replacement instead of removing the whole `media` attribute at the cloning step.
 
-As for [browser support](https://caniuse.com/#feat=dom-manip-convenience "Can I use: DOM manipulation convenience methods"): tl;dr all the modern ones including Edge 17+. This could be expanded lots by using ES5 syntax and a [polyfill](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend#Polyfill "MDN - ParentNode.prepend()") for ParentNode.prepend().
+As for [browser support](https://caniuse.com/#feat=dom-manip-convenience "Can I use: DOM manipulation convenience methods"): tl;dr all the modern ones including Edge 17+. This could be expanded by using ES5 syntax and a [polyfill](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend#Polyfill "MDN - ParentNode.prepend()") for ParentNode.prepend().
 
 ## Night owls rejoice! 🦉
 
 In 13 lines of JavaScript, we wrote a function to override the preferred colour scheme for all of the native automatic light and dark mode pictures on a page.
 
-Integrate this with the manual theme switcher on your website or app to always serve the right images – day 🌞 and night 🌚
+Integrate this with the manual theme switcher on your website or app to always serve the right images – day and night 🌞🌚

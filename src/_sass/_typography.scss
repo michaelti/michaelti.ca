@@ -5,7 +5,12 @@ body {
 }
 
 // Headings
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: $font-family-heading;
     font-weight: $font-weight-heading;
     margin-top: $layout-spacing * 2;
@@ -13,7 +18,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Line heights
-p, ol, ul {
+p,
+ol,
+ul {
     line-height: 1.5em;
 }
 
@@ -26,6 +33,7 @@ a {
 code {
     font-family: $font-family-code;
     font-weight: $font-weight-code;
+    font-size: 0.875rem;
 }
 
 // Code - inline
