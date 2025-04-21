@@ -4,10 +4,10 @@ layout: page
 
 <div class="post-content">
     <address class="post-address">
-        Michael Ti Dismatsek &bull; 
         <time datetime="{{page.date}}">
-            Published {{ page.date | date: '%B %e, %Y' }}
+            {{ page.date | date: '%B %e, %Y' }}
         </time>
+        &bull; Michael Ti Dismatsek
     </address>
 
     {{ content }}
@@ -16,6 +16,6 @@ layout: page
 <nav class="post-navigation">
     <a href="/sandbox">
         &larr; Back to Sandbox
-        <br>&nbsp;
+        <br />&nbsp;
     </a>
 </nav>

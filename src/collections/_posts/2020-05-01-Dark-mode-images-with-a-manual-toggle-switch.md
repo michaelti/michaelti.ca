@@ -1,7 +1,7 @@
 ---
-title: Dark mode images with a manual toggle switch 🌚
+title: Dark mode images with a manual toggle switch
 excerpt: >
-    A rudimentary approach to dark mode images when you've also implemented a manual toggle switch to override the system <code>prefers-color-scheme</code> setting.
+    An approach to dark mode images when you've also implemented a manual toggle switch to override the system color scheme.
 ---
 
 With the `prefers-color-scheme` CSS media query now [in all major browsers](https://caniuse.com/#feat=prefers-color-scheme "Can I use - prefers-color-scheme"), it's easy to get started with automatic light and dark themes on the web.
@@ -59,7 +59,9 @@ First, let's set up a function that takes the desired colour scheme, 'light' or 
 
 ```javascript
 function setPicturesThemed(colorScheme) {
-    document.querySelectorAll(`picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`);
+    document.querySelectorAll(
+        `picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`
+    );
 }
 ```
 
@@ -90,9 +92,11 @@ Two things are missing:
 To switch back to the default colour scheme, we just need to remove all of the `<source>` elements that we created. That's where the `data-cloned-theme` attribute we gave them comes in handy:
 
 ```javascript
-document.querySelectorAll("picture > source[data-cloned-theme]").forEach((el) => {
-    el.remove();
-});
+document
+    .querySelectorAll("picture > source[data-cloned-theme]")
+    .forEach((el) => {
+        el.remove();
+    });
 ```
 
 Putting that at the beginning of our main function will also take care of cleaning everything up each time it runs.
@@ -104,14 +108,18 @@ Finally, we'll use the default value of `colorScheme = undefined` (or null) to d
 ```javascript
 function setPicturesThemed(colorScheme) {
     // Clean up all existing picture sources that were cloned
-    document.querySelectorAll("picture > source[data-cloned-theme]").forEach((el) => {
-        el.remove();
-    });
+    document
+        .querySelectorAll("picture > source[data-cloned-theme]")
+        .forEach((el) => {
+            el.remove();
+        });
 
     if (colorScheme) {
         // Find all picture sources with the desired colour scheme
         document
-            .querySelectorAll(`picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`)
+            .querySelectorAll(
+                `picture > source[media*="(prefers-color-scheme: ${colorScheme})"]`
+            )
             .forEach((el) => {
                 // 1. Clone the given <source>
                 // 2. Remove the media attribute so the new <source> is unconditional
@@ -138,6 +146,6 @@ As for [browser support](https://caniuse.com/#feat=dom-manip-convenience "Can I 
 
 ## Night owls rejoice! 🦉
 
-In just 13 lines of JavaScript, we wrote a function to override the preferred colour scheme for all of the native automatic light and dark mode pictures on a page.
+In 13 lines of JavaScript, we wrote a function to override the preferred colour scheme for all of the native automatic light and dark mode pictures on a page.
 
-Integrate this with the manual theme switcher on your website or app to always serve the right images – day 🌞 and night 🌚.
+Integrate this with the manual theme switcher on your website or app to always serve the right images – day 🌞 and night 🌚

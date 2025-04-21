@@ -6,19 +6,18 @@ permalink: /sandbox/
 
 <div class="sandbox-articles">
     {% for item in site.posts %}
-        <article>
-            <header>
-                <h1>
-                    <a href="{{ item.url }}">{{ item.title }}</a>
-                </h1>
-            </header>
-            {{ item.excerpt }}
-            <footer>
-                <a href="{{ item.url }}">Read more &rarr;</a>
-                <time datetime="{{item.date}}">
-                    Published {{ item.date | date: '%B %e, %Y' }}
-                </time>
-            </footer>
-        </article>
+    <article>
+        <header>
+            <h1>
+                <a href="{{ item.url }}">{{ item.title }}</a>
+            </h1>
+        </header>
+        {{ item.excerpt }}
+        <footer>
+            <time datetime="{{item.date}}">
+                {{ item.date | date: '%B %e, %Y' }}
+            </time>
+        </footer>
+    </article>
     {% endfor %}
 </div>
