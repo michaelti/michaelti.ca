@@ -1,7 +1,7 @@
 ---
 title: Dark mode images with a manual toggle switch
 excerpt: >
-    An approach to dark mode images when you've also implemented a manual toggle switch to override the system color scheme.
+    An approach to dark mode images when you've also implemented a manual toggle switch to override the system color scheme
 ---
 
 With the `prefers-color-scheme` CSS media query now [in all major browsers](https://caniuse.com/#feat=prefers-color-scheme "Can I use - prefers-color-scheme"), it's easy to get started with automatic light and dark themes on the web.

@@ -2,7 +2,7 @@
 title: Fantasy in Eb by Mathew Montani
 preview: /assets/images/sandbox/fantasy-in-eb-preview.jpg
 excerpt: >
-    The first in a series of Synthesia-style videos produced with a friend on piano at the Hamilton Academy of Music.
+    The first in a series of Synthesia-style videos produced with a friend on piano at the Hamilton Academy of Music
 ---
 
 The first in a series of Synthesia-style videos that I produced with a great pianist and friend performing an original piece at the Hamilton Academy of Music.
