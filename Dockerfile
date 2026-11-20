@@ -1,4 +1,4 @@
-FROM ruby:latest AS build
+FROM ruby:4 AS build
 WORKDIR /app
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
